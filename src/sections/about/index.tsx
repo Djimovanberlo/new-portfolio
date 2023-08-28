@@ -1,5 +1,6 @@
+import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
 
-const AboutSection = () => <Section>About</Section>
+const AboutSection = () => <Section sectionName={SectionNames.About}>About</Section>
 
 export default AboutSection
