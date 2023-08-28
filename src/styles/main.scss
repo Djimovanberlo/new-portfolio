@@ -1,1 +1,25 @@
-//
+@charset 'utf-8';
+@use 'sass:math';
+
+@import './variables';
+@import './mixins';
+@import './functions.scss';
+
+// App
+@import './app.scss';
+
+// Layout
+@import '../layout/footer/style.scss';
+@import '../layout/header/style.scss';
+@import '../layout/main/style.scss';
+@import '../layout/nav/style.scss';
+@import '../layout/section/style.scss';
+
+// Sections
+@import '../sections/about/style.scss';
+@import '../sections/banner/style.scss';
+@import '../sections/contact/style.scss';
+@import '../sections/projects/style.scss';
+
+// Components
+@import '../components/button/style.scss';
