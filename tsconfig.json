@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false,
+    "baseUrl": "./src", // Set this to your project's source directory
+    "paths": {
+      "components/*": ["./components/*"], // You can add more aliases here
+      "layout/*": ["./layout/*"]
+    },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +22,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
