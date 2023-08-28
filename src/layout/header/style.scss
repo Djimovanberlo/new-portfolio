@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--color);
+
+  // TODO TEMP hover and nav styles
+  & > div:hover {
+    color: var(--color-hover);
+  }
+
+  & > nav {
+    width: fit-content;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    background-color: var(--background-color-button);
+    color: var(--color-button);
+  }
+
+  &[data-name='Banner'] {
+    --background-color: 'transparent';
+    --color: var(--white);
+    --color-hover: var(--light-blue);
+    --color-button: var(--dark-blue);
+    --background-color-button: var(--white);
+  }
+
+  &[data-name='About'] {
+    --background-color: var(--white);
+    --color: var(--black);
+    --color-hover: var(--red);
+    --color-button: var(--white);
+    --background-color-button: var(--red);
+  }
+
+  &[data-name='Projects'] {
+    --background-color: var(--black);
+    --color: var(--white);
+    --color-hover: var(--light-blue);
+    --color-button: var(--white);
+    --background-color-button: var(--light-blue);
+  }
+
+  &[data-name='Contact'] {
+    --background-color: var(--light-blue);
+    --color: var(--white);
+    --color-hover: var(--dark-blue);
+    --color-button: var(--white);
+    --background-color-button: var(--dark-blue);
+  }
+}

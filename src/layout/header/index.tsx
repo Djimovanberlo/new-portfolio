@@ -1,8 +1,8 @@
 import Nav from 'layout/nav'
 
-const Header = () => (
-  <header>
-    Header
+const Header = ({ sectionName }) => (
+  <header className='header' data-name={sectionName}>
+    <div>Header</div>
     <Nav />
   </header>
 )
