@@ -16,6 +16,13 @@ body {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -26,8 +33,15 @@ a {
 }
 
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url('./fonts/Roboto-Regular.woff') format('woff');
+  font-family: 'CrimsonText-Regular';
+  src: url('../assets/fonts/CrimsonText-Regular.ttf') format('ttf');
+  fonst-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('../assets/fonts/WorkSans-Regular.ttf') format('ttf');
   fonst-style: normal;
   font-display: swap;
 }

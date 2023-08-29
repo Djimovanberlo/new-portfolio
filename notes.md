@@ -76,6 +76,8 @@ State = null => Projects grid centered;
 - Sisoe
 - Portfolio
 - Talent calc
+- Wedding page
+- Card generator (in progress)
 - Ancient basement (in progress)
 - Dino game (in progress)
 
