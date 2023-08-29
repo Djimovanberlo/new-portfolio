@@ -1,5 +1,5 @@
-const Section = ({ id = '', children }) => (
-  <section id={id} className='section'>
+const Section = ({ id = '', className = '', children }) => (
+  <section id={id} className={`section ${className}`}>
     {children}
   </section>
 )
