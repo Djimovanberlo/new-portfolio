@@ -1,6 +1,6 @@
 export enum SectionNames {
-  Banner = 'Banner',
-  About = 'About',
-  Projects = 'Projects',
-  Contact = 'Contact',
+  Banner = 'banner',
+  About = 'about',
+  Projects = 'projects',
+  Contact = 'contact',
 }

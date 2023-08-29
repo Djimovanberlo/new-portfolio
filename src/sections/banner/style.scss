@@ -1,0 +1,9 @@
+#banner {
+  --pimary-color: var(--white);
+  --secondary-color: var(--light-blue);
+  --background-color: var(--dark-blue);
+  --color: var(--white);
+
+  display: grid;
+  place-items: center;
+}
