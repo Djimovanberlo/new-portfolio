@@ -17,7 +17,7 @@
     color: var(--color-button);
   }
 
-  &[data-name='Banner'] {
+  &[data-name='banner'] {
     --background-color: 'transparent';
     --color: var(--white);
     --color-hover: var(--light-blue);
@@ -25,7 +25,7 @@
     --background-color-button: var(--white);
   }
 
-  &[data-name='About'] {
+  &[data-name='about'] {
     --background-color: var(--white);
     --color: var(--black);
     --color-hover: var(--red);
@@ -33,7 +33,7 @@
     --background-color-button: var(--red);
   }
 
-  &[data-name='Projects'] {
+  &[data-name='projects'] {
     --background-color: var(--black);
     --color: var(--white);
     --color-hover: var(--light-blue);
@@ -41,7 +41,7 @@
     --background-color-button: var(--light-blue);
   }
 
-  &[data-name='Contact'] {
+  &[data-name='contact'] {
     --background-color: var(--light-blue);
     --color: var(--white);
     --color-hover: var(--dark-blue);

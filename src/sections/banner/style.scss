@@ -1,0 +1,67 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+$animation-duration: 1s;
+
+.banner {
+  --pimary-color: var(--white);
+  --secondary-color: var(--light-blue);
+  --background-color: var(--dark-blue);
+  --color: var(--white);
+
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &__wrapper {
+    text-align: center;
+
+    & > {
+      .h1 > span,
+      .h2 {
+        $delay: calc(var(--delay) * 0.05s);
+        animation-name: fadeIn;
+        animation-duration: $animation-duration;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: $space-xl;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6rem;
+    height: 6rem;
+    $delay: calc(var(--delay) * 0.08s);
+    animation-name: fadeIn, slideIn;
+    animation-duration: $animation-duration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: $delay;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
