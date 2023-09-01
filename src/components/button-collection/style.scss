@@ -1,1 +1,31 @@
-//
+#buttonCollection {
+  display: flex;
+  position: relative;
+  gap: $space-sm;
+
+  &::after {
+    content: '';
+    bottom: var(--active-btn-bottom);
+    top: var(--active-btn-top);
+    left: var(--active-btn-left);
+    right: var(--active-btn-right);
+    width: var(--active-btn-width);
+    height: var(--active-btn-height);
+    position: absolute;
+    background-color: var(--secondary-color);
+    // width: var(--active-btn-width);
+    // height: var(--active-btn-height);
+    border-radius: 1px;
+    margin: auto 0;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
+  // '--active-btn-x': `${activeBtnPosition.x}px`,
+  // '--active-btn-y': `${activeBtnPosition.y}px`,
+  // '--active-btn-width': `${activeBtnPosition.width}px`,
+  // '--active-btn-height': `${activeBtnPosition.height}px`,
+  // '--active-btn-top': `${activeBtnPosition.top}px`,
+  // '--active-btn-right': `${activeBtnPosition.right}px`,
+  // '--active-btn-bottom': `${activeBtnPosition.bottom}px`,
+  // '--active-btn-left': `${activeBtnPosition.left}px`,
+}
