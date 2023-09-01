@@ -15,8 +15,8 @@ const AboutSection = () => {
     <Section id={SectionNames.About} className={SectionNames.About}>
       <div className='about__container'>
         <Content title={aboutTitle} text={aboutText} imageWrapperId='aboutContentImage' image={img} />
-        <Timeline />
         <ButtonCollection buttons={buttons} />
+        <Timeline />
       </div>
     </Section>
   )

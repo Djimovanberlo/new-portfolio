@@ -1,3 +1,5 @@
+import { P } from 'components/typography'
+
 export const Tooltip = ({ children }) => {
-  return <div className='tooltip'>{children}</div>
+  return <P className='tooltip'>{children}</P>
 }
