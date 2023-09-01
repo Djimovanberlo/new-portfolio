@@ -4,4 +4,9 @@
   padding: $space-sm;
   background-color: var(--background-color);
   color: var(--color);
+
+  // select all section containers except the banner
+  & > div:not(.banner__container) {
+    max-width: 1100px;
+  }
 }
