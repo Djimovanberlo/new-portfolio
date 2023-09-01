@@ -2,17 +2,29 @@
   position: relative;
   display: flex;
   gap: $space-sm;
+  z-index: 100;
+
+  & > .button {
+    color: white !important;
+  }
 }
 
-.buttonCollection__subTab {
-  content: '';
-  background-color: var(--secondary-color);
-  position: absolute;
-  transition: all 0.5s ease-in-out;
+.buttonCollection {
+  &__subTab {
+    content: '';
+    background-color: var(--secondary-color);
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
 }
 
-.buttonCollection__btnsWrapper {
-  display: flex;
-  gap: $space-sm;
-  position: absolute;
-}
+// .buttonCollection__btnsWrapper {
+//   display: flex;
+//   gap: $space-sm;
+//   position: absolute;
+// }
+
+// .buttonCollection__btnsWrapper {
+//   &__button {
+//   }
+// }

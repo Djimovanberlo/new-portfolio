@@ -35,7 +35,7 @@ const ButtonCollection = ({ buttonsData, handleClick }) => {
 
   return (
     <div id='buttonCollection'>
-      <div className='buttonCollection__subTab' style={{ transform: `translateX(${activeBtnPosition.left}px)`, width: activeBtnPosition.width, height: activeBtnPosition.height }} />
+      <div className='buttonCollection__subTab' style={{ zIndex: '-1', transform: `translateX(${activeBtnPosition.left}px)`, width: activeBtnPosition.width, height: activeBtnPosition.height }} />
       {buttons}
     </div>
   )
