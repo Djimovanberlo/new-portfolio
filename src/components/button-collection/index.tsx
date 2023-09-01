@@ -26,28 +26,16 @@ const ButtonCollection = ({ buttonsData, handleClick }) => {
       width: clickedBtn.width,
       height: clickedBtn.height,
     }
-    console.log('Clciked', clickedBtn, parentPos)
+
     setActiveBtnPosition(relativePos)
     handleClick()
   }
-  const buttons = buttonsData.map((buttonText, index) => <Button id={id + 1} key={`${id} ${index}`} text={buttonText} handleClick={handleClicker} />)
-  console.log('R', activeBtnPosition)
+  console.log('Relative', activeBtnPosition)
+  const buttons = buttonsData.map((buttonText, index) => <Button key={`${id} ${index}`} text={buttonText} handleClick={handleClicker} />)
+
   return (
-    <div
-      id='buttonCollection'
-      style={
-        {
-          //   '--active-btn-x': `${activeBtnPosition.x}px`,
-          //   '--active-btn-y': `${activeBtnPosition.y}px`,
-          '--active-btn-width': `${activeBtnPosition.width}px`,
-          '--active-btn-height': `${activeBtnPosition.height}px`,
-          '--active-btn-top': `${activeBtnPosition.top}px`,
-          '--active-btn-right': `${activeBtnPosition.right}px`,
-          '--active-btn-bottom': `${activeBtnPosition.bottom}px`,
-          '--active-btn-left': `${activeBtnPosition.left}px`,
-          //   width: `${activeBtnPosition.width}px`,
-        } as CSSProperties
-      }>
+    <div id='buttonCollection'>
+      <div className='buttonCollection__subTab' style={{ transform: `translateX(${activeBtnPosition.left}px)`, width: activeBtnPosition.width, height: activeBtnPosition.height }} />
       {buttons}
     </div>
   )

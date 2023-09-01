@@ -1,14 +1,14 @@
 export const aboutTitle = 'About'
 
 const aboutPersonal = {
-  title: ';About',
+  title: 'Personal',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
-  buttonText: 'About',
+  buttonText: 'Personal',
 }
 const aboutProfessional = {
-  title: ';About',
+  title: 'Professional',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
-  buttonText: ';About',
+  buttonText: 'Professional',
 }
 
 const about = [aboutPersonal, aboutProfessional]
