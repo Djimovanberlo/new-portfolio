@@ -3,6 +3,11 @@
 .h3 {
   font-family: 'CrimsonText-Regular', serif;
   font-weight: normal;
+
+  &[data-underline='true'] {
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-color);
+  }
 }
 
 .p {

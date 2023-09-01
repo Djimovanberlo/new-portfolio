@@ -4,7 +4,6 @@ import { GoArrowDown } from 'react-icons/go'
 import { H1, H2 } from 'components/typography'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
-import { Link } from 'react-router-dom'
 
 const BannerSection = () => {
   const id = useId()
@@ -29,7 +28,7 @@ const BannerSection = () => {
 
   return (
     <Section id={SectionNames.Banner} className={SectionNames.Banner}>
-      <div className='banner__wrapper'>
+      <div className='banner__container'>
         <H1>
           {djimoArrWithRandomNums.map(({ letter, num }, index) => (
             <span key={id + index} style={{ '--delay': num } as CSSProperties}>

@@ -1,0 +1,19 @@
+.content {
+  &__imageText {
+    display: grid;
+    grid-template-columns: minmax(200px, 2fr) minmax(100px, 1fr);
+    gap: 5%;
+  }
+
+  &__imageWrapper {
+    justify-self: right;
+    width: 80%;
+    aspect-ratio: 1 / 1;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
