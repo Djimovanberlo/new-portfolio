@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-xs;
+  width: fit-content;
+  margin-inline: auto;
+
+  &__cell {
+    all: unset;
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    padding: $space-xs;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+    font-family: 'WorkSans-Regular', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

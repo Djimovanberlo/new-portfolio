@@ -9,8 +9,8 @@ export const HoverButton = ({ text, handleClick, className = '', id = '' }) => {
 }
 
 // TODO handle <any, any> types
-const Button = forwardRef<any, any>(({ id = '', className = '', handleClick, children }, ref) => (
-  <button ref={ref} id={id} className={`button ${className ?? ''}`} onClick={handleClick}>
+const Button = forwardRef<any, any>(({ id = '', className = '', name = '', handleClick, children }, ref) => (
+  <button ref={ref} id={id} className={`button ${className ?? ''}`} name={name} onClick={handleClick}>
     {children}
   </button>
 ))
