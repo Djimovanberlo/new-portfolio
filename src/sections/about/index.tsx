@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { useRect } from 'lib/hooks/useRect'
-import about, { aboutButtons } from 'lib/copy/about'
+import about from 'lib/copy/about'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
 import ButtonCollection from 'components/button-collection'
@@ -35,7 +35,7 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = aboutButtons.map((buttonText, index) => {
+  const buttons = Object.values(about).map(({ buttonText }, index) => {
     if (index === 0) {
       return (
         <Button key={index} ref={buttonRef} handleClick={handleClick}>
@@ -51,12 +51,10 @@ const AboutSection = () => {
     }
   })
 
-  const img = <img src='https://via.placeholder.com/150' alt='placeholder' />
-
   return (
     <Section id={SectionNames.About} className={SectionNames.About}>
       <div className='about__container'>
-        <Content title={aboutState.title} text={aboutState.text} imageWrapperId='aboutContentImage' image={img} />
+        <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} text={aboutState.text} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
         <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} buttonCollectionRef={buttonCollectionRef} />
         <Timeline />
       </div>
