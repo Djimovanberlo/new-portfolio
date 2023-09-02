@@ -37,21 +37,17 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = Object.entries(about).map(([key, { title }], index) => {
-    if (index === 0) {
-      return (
-        <Button key={index} name={key} handleClick={handleClick} ref={buttonRef}>
-          {title.toLowerCase()}
-        </Button>
-      )
-    } else {
-      return (
-        <Button key={index} name={key} handleClick={handleClick}>
-          {title.toLowerCase()}
-        </Button>
-      )
-    }
-  })
+  const buttons = Object.entries(about).map(([key, { title }], index) =>
+    index === 0 ? (
+      <Button key={index} name={key} handleClick={handleClick} ref={buttonRef}>
+        {title.toLowerCase()}
+      </Button>
+    ) : (
+      <Button key={index} name={key} handleClick={handleClick}>
+        {title.toLowerCase()}
+      </Button>
+    )
+  )
 
   return (
     <Section id={SectionNames.About} className={SectionNames.About}>
