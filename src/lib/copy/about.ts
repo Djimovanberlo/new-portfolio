@@ -1,19 +1,17 @@
 export const aboutTitle = 'About'
 
-const aboutPersonal = {
+const personal = {
   title: 'Personal',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
   img: 'https://via.placeholder.com/150',
-  buttonText: 'personal',
 }
 
-const aboutProfessional = {
+const professional = {
   title: 'Professional',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
   img: 'https://via.placeholder.com/150',
-  buttonText: 'professional',
 }
 
-const about = { personal: aboutPersonal, professional: aboutProfessional }
+const about = { personal, professional }
 
 export default about

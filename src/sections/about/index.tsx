@@ -8,6 +8,7 @@ import ButtonCollection from 'components/button-collection'
 import Content from 'components/content'
 import Timeline from 'components/timeline'
 import Button from 'components/button'
+import { P } from 'components/typography'
 
 const AboutSection = () => {
   // TODO extract this to custom hook for nav
@@ -21,6 +22,7 @@ const AboutSection = () => {
   }, [rect])
 
   const handleClick = evt => {
+    evt.preventDefault()
     if (!buttonCollectionRef?.current) return
     const buttonText = evt.target.textContent
     const clickedBtnRect = evt.target.getBoundingClientRect()
@@ -35,17 +37,17 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = Object.values(about).map(({ buttonText }, index) => {
+  const buttons = Object.entries(about).map(([key, { title }], index) => {
     if (index === 0) {
       return (
-        <Button key={index} ref={buttonRef} handleClick={handleClick}>
-          {buttonText}
+        <Button key={index} name={key} handleClick={handleClick} ref={buttonRef}>
+          {title.toLowerCase()}
         </Button>
       )
     } else {
       return (
-        <Button key={index} handleClick={handleClick}>
-          {buttonText}
+        <Button key={index} name={key} handleClick={handleClick}>
+          {title.toLowerCase()}
         </Button>
       )
     }
@@ -54,7 +56,7 @@ const AboutSection = () => {
   return (
     <Section id={SectionNames.About} className={SectionNames.About}>
       <div className='about__container'>
-        <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} text={aboutState.text} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
+        <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} content={<P>{aboutState.text}</P>} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
         <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} buttonCollectionRef={buttonCollectionRef} />
         <Timeline />
       </div>
