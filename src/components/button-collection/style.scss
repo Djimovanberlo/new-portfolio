@@ -1,4 +1,4 @@
-#buttonCollection {
+.buttonCollection {
   position: relative;
   display: flex;
   gap: $space-sm;
@@ -7,12 +7,15 @@
   & > .button {
     color: white !important;
   }
-}
 
-.buttonCollection {
-  &__subTab {
+  &::after {
     content: '';
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    transform: translateX(var(--left));
     background-color: var(--secondary-color);
+    z-index: -1;
     position: absolute;
     transition: all 0.5s ease-in-out;
   }

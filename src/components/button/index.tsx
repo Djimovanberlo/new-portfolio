@@ -1,4 +1,4 @@
-import { P } from 'components/typography'
+import { forwardRef } from 'react'
 
 export const HoverButton = ({ text, handleClick, className = '', id = '' }) => {
   return (
@@ -8,12 +8,10 @@ export const HoverButton = ({ text, handleClick, className = '', id = '' }) => {
   )
 }
 
-const Button = ({ text, handleClick, className = '', id = '' }) => {
-  return (
-    <button id={id} className={`button ${className}`} onClick={handleClick}>
-      {text}
-    </button>
-  )
-}
+const Button = forwardRef<any, any>(({ id = '', className = '', handleClick, children }, ref) => (
+  <button ref={ref} id={id} className={`button ${className ?? ''}`} onClick={handleClick}>
+    {children}
+  </button>
+))
 
 export default Button
