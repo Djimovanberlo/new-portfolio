@@ -23,3 +23,4 @@
 - check unused props
 - order imports
 - refactor animations; standardize times
+- favicon + tab title
