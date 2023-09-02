@@ -24,7 +24,8 @@
     align-items: center;
     gap: 2rem;
 
-    & > .content {
+    & > .content > .h2,
+    & .projectContent {
       animation-duration: $animation-duration;
       animation-timing-function: ease-in-out;
       animation-fill-mode: both;

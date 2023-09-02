@@ -8,6 +8,7 @@ import ButtonCollection from 'components/button-collection'
 import Content from 'components/content'
 import Timeline from 'components/timeline'
 import Button from 'components/button'
+import { P } from 'components/typography'
 
 const AboutSection = () => {
   // TODO extract this to custom hook for nav
@@ -55,7 +56,7 @@ const AboutSection = () => {
   return (
     <Section id={SectionNames.About} className={SectionNames.About}>
       <div className='about__container'>
-        <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} text={aboutState.text} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
+        <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} content={<P>{aboutState.text}</P>} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
         <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} buttonCollectionRef={buttonCollectionRef} />
         <Timeline />
       </div>
