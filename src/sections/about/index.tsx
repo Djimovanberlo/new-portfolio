@@ -53,7 +53,7 @@ const AboutSection = () => {
     <Section id={SectionNames.About} className={SectionNames.About}>
       <div className='about__container'>
         <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} content={<P>{aboutState.text}</P>} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
-        <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} buttonCollectionRef={buttonCollectionRef} />
+        <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} ref={buttonCollectionRef} />
         <Timeline />
       </div>
     </Section>
