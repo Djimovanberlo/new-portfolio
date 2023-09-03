@@ -4,14 +4,14 @@ import Footer from 'layout/footer'
 import './styles/main.scss'
 import 'styles/app.scss'
 
-import { SectionNames } from 'interfaces/layout'
-
-const App = () => (
-  <div className='app'>
-    <Header sectionName={SectionNames.Banner} />
-    <Main />
-    {/* <Footer /> */}
-  </div>
-)
+const App = () => {
+  return (
+    <div className='app'>
+      <Header />
+      <Main />
+      {/* <Footer /> */}
+    </div>
+  )
+}
 
 export default App

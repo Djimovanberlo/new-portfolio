@@ -1,51 +1,43 @@
 .header {
   position: fixed;
+  z-index: 200;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background-color: var(--background-color);
   color: var(--color);
-
-  // TODO TEMP hover and nav styles
-  & > div:hover {
-    color: var(--color-hover);
-  }
-
-  & > nav {
-    width: fit-content;
-    padding: 0.3rem;
-    margin: 0.3rem;
-    background-color: var(--background-color-button);
-    color: var(--color-button);
-  }
+  transition: all 0.5s ease-in-out;
+  padding: 0 $space-sm;
 
   &[data-name='banner'] {
+    --primary-color: var(--light-blue);
+    --secondary-color: var(--black);
     --background-color: 'transparent';
     --color: var(--white);
-    --color-hover: var(--light-blue);
-    --color-button: var(--dark-blue);
-    --background-color-button: var(--white);
+    // --color: var(--light-blue);
   }
 
   &[data-name='about'] {
+    --primary-color: var(--red);
+    --secondary-color: var(--white);
     --background-color: var(--white);
     --color: var(--black);
-    --color-hover: var(--red);
-    --color-button: var(--white);
-    --background-color-button: var(--red);
   }
 
   &[data-name='projects'] {
+    --primary-color: var(--light-blue);
+    --secondary-color: var(--black);
+    // --secondary-color: var(--black);
     --background-color: var(--black);
     --color: var(--white);
-    --color-hover: var(--light-blue);
-    --color-button: var(--white);
-    --background-color-button: var(--light-blue);
+    // --color: var(--light-blue);
   }
 
   &[data-name='contact'] {
+    --primary-color: var(--dark-blue);
+    --secondary-color: var(--white);
     --background-color: var(--light-blue);
-    --color: var(--white);
-    --color-hover: var(--dark-blue);
-    --color-button: var(--white);
-    --background-color-button: var(--dark-blue);
+    --color: var(--black);
   }
 }

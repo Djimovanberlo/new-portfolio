@@ -7,7 +7,7 @@ import ollinImg from 'assets/images/olln.png'
 const TimelineIcon = ({ tooltipChildren, icon }) => (
   <div className='timelineIcon'>
     <P className='tooltip'>{tooltipChildren}</P>
-    <img src={icon} />
+    <img src={icon} alt='timeline img' />
   </div>
 )
 

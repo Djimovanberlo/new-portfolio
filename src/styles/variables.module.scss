@@ -10,3 +10,10 @@ $space-sm: 1rem;
 $space-md: 2rem;
 $space-lg: 3rem;
 $space-xl: 4rem;
+
+// MISC
+$header-height: 3rem;
+
+:export {
+  headerHeight: $header-height;
+}

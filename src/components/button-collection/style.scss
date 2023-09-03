@@ -4,30 +4,15 @@
   gap: $space-sm;
   z-index: 100;
 
-  & > .button {
-    color: white !important;
-  }
-
   &::after {
     content: '';
     display: block;
     width: var(--width);
     height: var(--height);
     transform: translateX(var(--left));
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     z-index: -1;
     position: absolute;
     transition: all 0.5s ease-in-out;
   }
 }
-
-// .buttonCollection__btnsWrapper {
-//   display: flex;
-//   gap: $space-sm;
-//   position: absolute;
-// }
-
-// .buttonCollection__btnsWrapper {
-//   &__button {
-//   }
-// }

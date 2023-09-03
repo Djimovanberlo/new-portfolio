@@ -21,13 +21,14 @@ const BannerSection = () => {
     num: uniqueRandomNums[index],
   }))
 
-  const handleClickScroll = () => {
+  const handleClickScroll = evt => {
+    evt.preventDefault()
     const element = document.getElementById(SectionNames.About)
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <Section id={SectionNames.Banner} className={SectionNames.Banner}>
+    <Section name={SectionNames.Banner}>
       <div className='banner__container'>
         <H1>
           {djimoArrWithRandomNums.map(({ letter, num }, index) => (

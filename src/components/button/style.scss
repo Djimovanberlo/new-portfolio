@@ -6,12 +6,17 @@
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.75rem;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
     cursor: pointer;
   }
 }
 
+.button[data-active='true'] {
+  color: var(--secondary-color);
+}
+
 .hoverButton::hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }

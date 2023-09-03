@@ -15,7 +15,7 @@ const getRect = element => {
 }
 
 export const useRect = () => {
-  const ref = useRef(null)
+  const ref = useRef<any>(null)
   const [rect, setRect] = useState(getRect(ref ? ref.current : null))
 
   const handleResize = useCallback(() => {

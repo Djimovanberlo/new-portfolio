@@ -6,7 +6,7 @@ const StackList = ({ stackArr }) => {
   return (
     <div className='stackList'>
       {stackArr.map((stack, index) => (
-        <div className={id + index}>{stack}</div>
+        <div key={id + index}>{stack}</div>
       ))}
     </div>
   )
