@@ -19,7 +19,7 @@ const ProjectsSection = () => {
   }
 
   return (
-    <Section id={SectionNames.Projects} className={SectionNames.Projects}>
+    <Section name={SectionNames.Projects}>
       <div className='projects__container'>
         <Content key={projectState.title} ref={imgRef} title={projectState.title} content={<ProjectContent stackArr={projectState.stack} text={projectState.text} />} imageWrapperId='temp' />
         <Grid handleClick={handleUpdateProjectState} imgRect={imgRect} />

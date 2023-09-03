@@ -27,7 +27,7 @@ const BannerSection = () => {
   }
 
   return (
-    <Section id={SectionNames.Banner} className={SectionNames.Banner}>
+    <Section name={SectionNames.Banner}>
       <div className='banner__container'>
         <H1>
           {djimoArrWithRandomNums.map(({ letter, num }, index) => (

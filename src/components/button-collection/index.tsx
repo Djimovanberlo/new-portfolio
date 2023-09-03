@@ -1,6 +1,7 @@
 import { CSSProperties, forwardRef } from 'react'
 
 const ButtonCollection = forwardRef<any, any>(({ buttons, backgroundPos }, ref) => {
+  console.log('BUTTONS', ref)
   return (
     <div
       className='buttonCollection'

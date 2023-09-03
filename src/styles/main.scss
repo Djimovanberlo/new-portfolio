@@ -1,7 +1,7 @@
 @charset 'utf-8';
 @use 'sass:math';
 
-@import './variables';
+@import './variables.module';
 @import './mixins';
 @import './functions.scss';
 

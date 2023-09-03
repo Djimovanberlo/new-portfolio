@@ -9,31 +9,16 @@ import Content from 'components/content'
 import Timeline from 'components/timeline'
 import Button from 'components/button'
 import { P } from 'components/typography'
+import useButtonCollection from 'lib/hooks/useButtonCollection'
 
 const AboutSection = () => {
-  // TODO extract this to custom hook for nav
-  const buttonCollectionRef = useRef<HTMLDivElement | null>(null)
-  const { rect, ref: buttonRef } = useRect()
-  const [backgroundPos, setBackgroundPos] = useState({ width: rect.width, height: rect.height, left: 0 })
+  const { buttonRef, buttonCollectionRef, backgroundPos, handleUpdateButtonPos } = useButtonCollection()
   const [aboutState, setAboutState] = useState(about.personal)
-
-  useEffect(() => {
-    if (rect) setBackgroundPos({ width: rect.width, height: rect.height, left: 0 })
-  }, [rect])
 
   const handleClick = evt => {
     evt.preventDefault()
-    if (!buttonCollectionRef?.current) return
+    handleUpdateButtonPos(evt)
     const buttonText = evt.target.textContent
-    const clickedBtnRect = evt.target.getBoundingClientRect()
-    const parentRect = buttonCollectionRef?.current?.getBoundingClientRect()
-
-    const relativePos = {
-      width: clickedBtnRect.width,
-      height: clickedBtnRect.height,
-      left: clickedBtnRect.left - parentRect.left,
-    }
-    setBackgroundPos(relativePos)
     setAboutState(about[buttonText])
   }
 
@@ -50,7 +35,7 @@ const AboutSection = () => {
   )
 
   return (
-    <Section id={SectionNames.About} className={SectionNames.About}>
+    <Section name={SectionNames.About}>
       <div className='about__container'>
         <Content key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} content={<P>{aboutState.text}</P>} imageWrapperId='aboutContentImage' image={<img src={aboutState.img} alt='placeholder' />} />
         <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} ref={buttonCollectionRef} />
