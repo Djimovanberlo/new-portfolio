@@ -20,6 +20,15 @@
     line-height: 1.75rem;
     background-repeat: no-repeat;
     background-size: cover;
+    transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(var(--dw), var(--dh));
+
+    &[data-flip='invert']:before {
+    }
+
+    &[data-flip='play']:before {
+      transition: transform 0.3s;
+      transform: none;
+    }
 
     &:hover {
       cursor: pointer;

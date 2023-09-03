@@ -1,10 +1,10 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, forwardRef } from 'react'
 
-const ButtonCollection = ({ buttons, buttonCollectionRef, backgroundPos }) => {
+const ButtonCollection = forwardRef<any, any>(({ buttons, backgroundPos }, ref) => {
   return (
     <div
       className='buttonCollection'
-      ref={buttonCollectionRef}
+      ref={ref}
       style={
         {
           '--left': `${backgroundPos.left}px`,
@@ -15,6 +15,6 @@ const ButtonCollection = ({ buttons, buttonCollectionRef, backgroundPos }) => {
       {buttons}
     </div>
   )
-}
+})
 
 export default ButtonCollection
