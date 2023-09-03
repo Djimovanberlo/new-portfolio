@@ -23,7 +23,7 @@ const useButtonCollection = () => {
     setBackgroundPos(relativePos)
   }
 
-  return { buttonRef, buttonCollectionRef, backgroundPos, handleUpdateButtonPos }
+  return { buttonRef, buttonCollectionRef, backgroundPos, handleUpdateButtonPos, setBackgroundPos }
 }
 
 export default useButtonCollection
