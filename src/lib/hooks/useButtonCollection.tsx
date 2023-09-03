@@ -1,29 +1,39 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRect } from './useRect'
 
-const useButtonCollection = () => {
-  const { rect: buttonRect, ref: buttonRef } = useRect()
+interface Props {
+  buttonsClass: string
+}
+
+const useButtonCollection = ({ buttonsClass }: Props) => {
   const { rect: buttonCollectionRect, ref: buttonCollectionRef } = useRect()
-  const [backgroundPos, setBackgroundPos] = useState({ width: buttonRect.width, height: buttonRect.height, left: 0 })
+  const [backgroundPos, setBackgroundPos] = useState({ width: 0, height: 0, left: 0 })
+
+  const handleUpdateButtonPos = useCallback(
+    (rect: DOMRect) => {
+      const relativePos = {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left - buttonCollectionRect.left,
+      }
+
+      setBackgroundPos(relativePos)
+    },
+    [buttonCollectionRect]
+  )
 
   useEffect(() => {
-    if (buttonRect) setBackgroundPos({ width: buttonRect.width, height: buttonRect.height, left: 0 })
-  }, [buttonRect])
+    const activeButton = document.querySelector(`button.${buttonsClass}[data-active="true"]`) as HTMLButtonElement
 
-  const handleUpdateButtonPos = evt => {
-    if (!buttonCollectionRef?.current) return
-    const clickedBtnRect = evt.target.getBoundingClientRect()
-
-    const relativePos = {
-      width: clickedBtnRect.width,
-      height: clickedBtnRect.height,
-      left: clickedBtnRect.left - buttonCollectionRect.left,
+    if (activeButton) {
+      window.requestAnimationFrame(() => {
+        const rect = activeButton.getBoundingClientRect()
+        handleUpdateButtonPos(rect)
+      })
     }
+  }, [handleUpdateButtonPos, buttonsClass])
 
-    setBackgroundPos(relativePos)
-  }
-
-  return { buttonRef, buttonCollectionRef, backgroundPos, handleUpdateButtonPos, setBackgroundPos }
+  return { buttonCollectionRef, backgroundPos, handleUpdateButtonPos }
 }
 
 export default useButtonCollection

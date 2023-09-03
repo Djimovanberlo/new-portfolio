@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import Content from 'components/content'
 import { SectionNames } from 'interfaces/layout'

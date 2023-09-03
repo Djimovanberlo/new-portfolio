@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
-import { useRect } from 'lib/hooks/useRect'
 import about from 'lib/copy/about'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
@@ -12,24 +11,23 @@ import { P } from 'components/typography'
 import useButtonCollection from 'lib/hooks/useButtonCollection'
 
 const AboutSection = () => {
-  const { buttonRef, buttonCollectionRef, backgroundPos, handleUpdateButtonPos } = useButtonCollection()
+  const buttonsClass = 'aboutButton'
+  const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } = useButtonCollection({ buttonsClass })
   const [aboutState, setAboutState] = useState(about.personal)
 
   const handleClick = evt => {
     evt.preventDefault()
-    handleUpdateButtonPos(evt)
+    const rect = evt.target.getBoundingClientRect()
+    handleUpdateButtonPos(rect)
+
     const buttonText = evt.target.textContent
     setAboutState(about[buttonText])
   }
 
   const buttons = Object.entries(about).map(([key, { title }], index) => {
     const isActive = aboutState.title === title
-    return index === 0 ? (
-      <Button key={index} name={key} handleClick={handleClick} isActive={isActive} ref={buttonRef}>
-        {title.toLowerCase()}
-      </Button>
-    ) : (
-      <Button key={index} name={key} handleClick={handleClick} isActive={isActive}>
+    return (
+      <Button key={index} className={buttonsClass} name={key} handleClick={handleClick} isActive={isActive}>
         {title.toLowerCase()}
       </Button>
     )
