@@ -21,7 +21,8 @@ const BannerSection = () => {
     num: uniqueRandomNums[index],
   }))
 
-  const handleClickScroll = () => {
+  const handleClickScroll = evt => {
+    evt.preventDefault()
     const element = document.getElementById(SectionNames.About)
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }

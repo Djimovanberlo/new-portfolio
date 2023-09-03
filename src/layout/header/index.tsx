@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className='header' style={{ height: style.headerHeight }} data-name={activeId}>
-      <Nav />
+      <Nav activeId={activeId} />
     </header>
   )
 }

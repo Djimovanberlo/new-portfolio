@@ -6,7 +6,6 @@ import projects from 'lib/copy/projects'
 const Cell = ({ title, img, handleClick, id, imgRect }) => {
   const cellRef = useRef(null)
   const [isCollapsed, setIsCollapsed] = useState(true)
-  // console.log('cellRef', imgRect)
 
   const flipAnimate = (prevRect, finalRect) => {
     const dx = prevRect.left - finalRect.left

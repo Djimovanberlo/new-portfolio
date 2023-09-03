@@ -22,17 +22,18 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = Object.entries(about).map(([key, { title }], index) =>
-    index === 0 ? (
-      <Button key={index} name={key} handleClick={handleClick} ref={buttonRef}>
+  const buttons = Object.entries(about).map(([key, { title }], index) => {
+    const isActive = aboutState.title === title
+    return index === 0 ? (
+      <Button key={index} name={key} handleClick={handleClick} isActive={isActive} ref={buttonRef}>
         {title.toLowerCase()}
       </Button>
     ) : (
-      <Button key={index} name={key} handleClick={handleClick}>
+      <Button key={index} name={key} handleClick={handleClick} isActive={isActive}>
         {title.toLowerCase()}
       </Button>
     )
-  )
+  })
 
   return (
     <Section name={SectionNames.About}>
