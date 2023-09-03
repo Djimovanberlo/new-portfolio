@@ -18,9 +18,14 @@ const Nav = ({ activeId }) => {
 
   const buttons = Object.values(SectionNames).map((title, index) => {
     const isActive = activeId === title
-    return (
+
+    return index === 0 ? (
       <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
-        home
+        Djimo
+      </Button>
+    ) : (
+      <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
+        {title}
       </Button>
     )
   })
