@@ -10,11 +10,20 @@
   }
 }
 
-.p {
+.p,
+.label {
   font-family: 'WorkSans-Regular', sans-serif;
   font-weight: normal;
+}
+
+.p {
   font-size: 1rem;
   line-height: 1.75rem;
+}
+
+.label {
+  font-size: 0.5rem;
+  line-height: 0.75rem;
 }
 
 .h1 {
