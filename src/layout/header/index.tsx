@@ -1,14 +1,16 @@
 import Nav from 'layout/nav'
 import { SectionNames } from 'interfaces/layout'
 import { useScrollspy } from 'lib/hooks/useScrollSpy'
-import style from 'styles/variables.module.scss'
+import { useRef } from 'react'
 
 const Header = () => {
+  const headerRef = useRef<any>(null)
+  const headerHeight = headerRef.current?.clientHeight
   const sectionIds = Object.values(SectionNames)
-  const activeId = useScrollspy(sectionIds, 60)
+  const activeId = useScrollspy({ ids: sectionIds, offset: headerHeight })
 
   return (
-    <header className='header' style={{ height: style.headerHeight }} data-name={activeId}>
+    <header ref={headerRef} className='header' data-name={activeId}>
       <Nav activeId={activeId} />
     </header>
   )

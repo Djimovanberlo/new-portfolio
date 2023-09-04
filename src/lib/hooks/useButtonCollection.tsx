@@ -23,7 +23,7 @@ const useButtonCollection = ({ buttonsClass }: Props) => {
     const activeButton = document.querySelector(`button.${buttonsClass}[data-active="true"]`) as HTMLButtonElement
 
     if (activeButton) {
-      window.requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         const rect = activeButton.getBoundingClientRect()
         handleUpdateButtonPos(rect)
       })

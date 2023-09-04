@@ -1,9 +1,9 @@
 @charset 'utf-8';
 @use 'sass:math';
 
-@import './variables.module';
+@import './variables';
 @import './mixins';
-@import './functions.scss';
+@import './functions';
 
 // App
 @import './app.scss';
