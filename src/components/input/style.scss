@@ -1,6 +1,7 @@
 .input {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   &__field {
     padding: $space-xs 0;
@@ -22,5 +23,12 @@
 
   &__textArea {
     max-width: 100%;
+  }
+
+  &__feedback {
+    position: absolute;
+    font-style: italic;
+    color: var(--red);
+    bottom: -1.5rem;
   }
 }

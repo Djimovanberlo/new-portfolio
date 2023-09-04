@@ -9,23 +9,70 @@ interface Props {
   value: string
   placeholder: string
   labelText: string
-  status: any
   error?: string
   touched?: boolean
-  onBlur: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  onBlur: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
 }
 
-export const InputTextField = ({ className = '', name, value, placeholder, labelText, status, error, touched, onBlur, onChange }: Omit<Props, 'type'>) => (
+export const InputTextField = ({
+  className = '',
+  name,
+  value,
+  placeholder,
+  labelText,
+  error,
+  touched,
+  onBlur,
+  onChange,
+}: Omit<Props, 'type'>) => (
   <div className='input'>
     <Label>{labelText}</Label>
-    <textarea className={`input__field input__textArea ${className}`} onChange={onChange} onBlur={onBlur} value={value} required name={name} placeholder={placeholder} />
+    <textarea
+      className={`input__field input__textArea ${className}`}
+      onChange={onChange}
+      onBlur={onBlur}
+      value={value}
+      required
+      name={name}
+      placeholder={placeholder}
+    />
+    {error && touched && (
+      <Label className='input__feedback'>{error}</Label>
+    )}
   </div>
 )
 
-export const Input = ({ className = '', type, name, value, placeholder, labelText, status, error, touched, onBlur, onChange }: Props) => (
+export const Input = ({
+  className = '',
+  type,
+  name,
+  value,
+  placeholder,
+  labelText,
+  error,
+  touched,
+  onBlur,
+  onChange,
+}: Props) => (
   <div className='input inputText'>
     <Label>{labelText}</Label>
-    <input className={`input__field ${className}`} onChange={onChange} onBlur={onBlur} value={value} required type={type} name={name} placeholder={placeholder} />
+    <input
+      className={`input__field ${className}`}
+      onChange={onChange}
+      onBlur={onBlur}
+      value={value}
+      required
+      type={type}
+      name={name}
+      placeholder={placeholder}
+    />
+    {error && touched && (
+      <Label className='input__feedback'>{error}</Label>
+    )}
   </div>
 )
