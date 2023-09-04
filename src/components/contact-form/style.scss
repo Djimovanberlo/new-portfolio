@@ -1,0 +1,12 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  padding-top: $space-md;
+  margin-inline: auto;
+  width: 25rem;
+
+  & > .button {
+    align-self: end;
+  }
+}

@@ -5,7 +5,7 @@ export const P = ({ style = {}, className = '', children }) => (
 )
 
 export const Label = ({ style = {}, className = '', children }) => (
-  <label style={style} className={`caption ${className}`}>
+  <label style={style} className={`label ${className}`}>
     {children}
   </label>
 )
