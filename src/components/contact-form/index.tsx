@@ -5,25 +5,20 @@ import { Input, InputTextField } from 'components/input'
 import { useFormik } from 'formik'
 import { validationSchemaContact } from 'lib/validation'
 
-const ContactForm = () => {
-  const form = useRef<any>(null)
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY ?? ''
+const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? ''
+const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? ''
 
-  const sendEmail = () => {
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        form.current,
-        'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        result => {
-          console.log(result.text)
-        },
-        error => {
-          console.log(error.text)
-        }
-      )
+const ContactForm = () => {
+  const sendEmail = values => {
+    emailjs.send(serviceId, templateId, values, publicKey).then(
+      result => {
+        console.log('SUCCESS', result.text)
+      },
+      error => {
+        console.log('ERROR', error.text)
+      }
+    )
   }
 
   const { values, handleChange, handleBlur, handleSubmit, errors, touched } =
@@ -35,7 +30,7 @@ const ContactForm = () => {
       },
       validationSchema: validationSchemaContact,
       onSubmit: values => {
-        alert(JSON.stringify(values, null, 2))
+        sendEmail(values)
       },
     })
 
