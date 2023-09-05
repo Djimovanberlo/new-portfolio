@@ -3,34 +3,58 @@ import { useId, useRef, useState } from 'react'
 import projects from 'lib/copy/projects'
 // TODO ts
 
-const Cell = ({ title, img, handleClick, id, imgRect }) => {
+const Cell = ({ title, img, handleClick, id, imgRef, projectsRef }) => {
   const cellRef = useRef(null)
-  const [isCollapsed, setIsCollapsed] = useState(true)
-
-  const flipAnimate = (prevRect, finalRect) => {
-    const dx = prevRect.left - finalRect.left
-    const dy = prevRect.top - finalRect.top
-    const dw = prevRect.width / finalRect.width
-    const dh = prevRect.height / finalRect.height
-
-    return { dx, dy, dw, dh }
-  }
 
   const handleClicker = () => {
+    const modalEl = imgRef.current.parentElement
+
+    modalEl.style.setProperty('display', 'block')
+    modalEl.setAttribute('data-image', title)
+
+    console.log("cellRef.current.getAttribute('src')", cellRef.current)
+    modalEl
+      .querySelector('img')
+      .setAttribute('src', cellRef.current.getAttribute('src'))
+    projectsRef.current.style.setProperty('opacity', 0)
+
     const prevRect = cellRef.current.getBoundingClientRect()
-    const finalRect = imgRect
-    setIsCollapsed(prevState => !prevState)
+    const finalRect = imgRef.current.getBoundingClientRect()
 
-    const { dx, dy, dw, dh } = flipAnimate(finalRect, prevRect)
+    imgRef.current.animate(
+      [
+        {
+          transform: `
+          translateX(${prevRect.left - finalRect.left}px)
+          translateY(${prevRect.top - finalRect.top}px)
+          scale(${prevRect.width / finalRect.width})
+        `,
+        },
+        {
+          transform: `
+          translateX(0)
+          translateY(0)
+          scale(1)
+         `,
+        },
+      ],
+      {
+        duration: 600,
+        easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
+      }
+    )
+    // setIsCollapsed(prevState => !prevState)
 
-    cellRef.current.style.setProperty('--dx', dx)
-    cellRef.current.style.setProperty('--dy', dy)
-    cellRef.current.style.setProperty('--dw', dw)
-    cellRef.current.style.setProperty('--dh', dh)
+    // const { dx, dy, dw, dh } = flipAnimate(finalRect, prevRect)
+
+    // cellRef.current.style.setProperty('--dx', dx)
+    // cellRef.current.style.setProperty('--dy', dy)
+    // cellRef.current.style.setProperty('--dw', dw)
+    // cellRef.current.style.setProperty('--dh', dh)
 
     // requestAnimationFrame(() => {
     //   // const finalRect = cellRef.current.getBoundingClientRect()
-    //   const finalRect = imgRect
+    //   // const finalRect = imgRect
     //   const { dx, dy, dw, dh } = flipAnimate(prevRect, finalRect)
 
     //   cellRef.current.style.setProperty('--dx', dx)
@@ -45,27 +69,32 @@ const Cell = ({ title, img, handleClick, id, imgRect }) => {
   }
 
   return (
-    <div
-      ref={cellRef}
+    <img
       id={id}
+      ref={cellRef}
       className='grid__cell'
-      data-collapse={isCollapsed}
+      data-key={title}
       onClick={handleClicker}
-      style={{
-        backgroundImage: `url(${img})`,
-      }}>
-      {title}
-    </div>
+      src={img}
+    />
   )
 }
 
-const Grid = ({ handleClick, imgRect }) => {
+const Grid = ({ modalIsOpen, handleClick, imgRef, projectsRef }) => {
   const id = useId()
 
   return (
-    <div className='grid'>
+    <div className='grid' data-modal-open={modalIsOpen}>
       {Object.entries(projects).map(([key, { title, img }], index) => (
-        <Cell className='grid__cell' key={id + index} onClick={handleClick} id={key} img={img} imgRect={imgRect}>
+        <Cell
+          className='grid__cell'
+          key={id + index}
+          id={key}
+          img={img}
+          title={title}
+          imgRef={imgRef}
+          projectsRef={projectsRef}
+          handleClick={handleClick}>
           {title}
         </Cell>
       ))}

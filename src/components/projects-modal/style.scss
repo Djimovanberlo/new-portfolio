@@ -1,0 +1,26 @@
+#projectsModal {
+  //   &[data-modal-open='true'] {
+  //     display: block;
+  //   }
+
+  //   &[data-modal-open='false'] {
+  //     display: none;
+  //   }
+}
+
+.projectsModal {
+  display: none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  left: 0;
+  right: 0;
+
+  //   object-fit: cover;
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+  }
+}

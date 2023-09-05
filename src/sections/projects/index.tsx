@@ -1,28 +1,50 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
-import Content from 'components/content'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
-import projects from 'lib/copy/projects'
 import Grid from 'components/grid'
-import ProjectContent from 'components/project-content'
 import { useRect } from 'lib/hooks/useRect'
+import { H2, P } from 'components/typography'
+import ProjectsModal from 'components/projects-modal'
 
 const ProjectsSection = () => {
-  const { rect: imgRect, ref: imgRef } = useRect()
-  const [projectState, setProjectState] = useState(projects.portfolio)
-
-  const handleUpdateProjectState = evt => {
-    evt.preventDefault()
-    const projectName = evt.target.id
-    setProjectState(projects[projectName])
+  // const { rect: imgRect, ref: imgRef } = useRect()
+  const imgRef = useRef(null)
+  const projectsRef = useRef(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  function openModal() {
+    setModalIsOpen(true)
   }
+
+  function closeModal() {
+    setModalIsOpen(false)
+  }
+  // const [projectState, setProjectState] = useState(projects.portfolio)
+
+  // const handleUpdateProjectState = evt => {
+  //   evt.preventDefault()
+  //   const projectName = evt.target.id
+  //   setProjectState(projects[projectName])
+  // }
 
   return (
     <Section name={SectionNames.Projects}>
-      <div className='projects__container'>
-        <Content key={projectState.title} ref={imgRef} title={projectState.title} content={<ProjectContent stackArr={projectState.stack} text={projectState.text} />} imageWrapperId='temp' />
-        <Grid handleClick={handleUpdateProjectState} imgRect={imgRect} />
+      <ProjectsModal
+        ref={imgRef}
+        modalIsOpen={modalIsOpen}
+        handleClick={closeModal}
+      />
+      <div ref={projectsRef} className='projects__container'>
+        <H2>Projects</H2>
+        <P>
+          Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem{' '}
+        </P>
+        <Grid
+          modalIsOpen={modalIsOpen}
+          handleClick={openModal}
+          imgRef={imgRef}
+          projectsRef={projectsRef}
+        />
       </div>
     </Section>
   )
