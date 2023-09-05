@@ -20,6 +20,7 @@
 - Write copy / get images
 - Check //TODO
 - Check any
+- rmv useRect() ?
 - check unused props
 - order imports
 - refactor animations; standardize times
