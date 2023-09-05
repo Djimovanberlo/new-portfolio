@@ -6,7 +6,13 @@
   margin-inline: auto;
   width: 25rem;
 
-  & > .hoverButton {
-    align-self: end;
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > .hoverButton {
+      margin-left: auto;
+    }
   }
 }

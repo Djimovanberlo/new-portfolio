@@ -11,12 +11,8 @@ interface Props {
   labelText: string
   error?: string
   touched?: boolean
-  onBlur: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void
-  onChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void
+  onBlur: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
 export const InputTextField = ({
@@ -41,9 +37,7 @@ export const InputTextField = ({
       name={name}
       placeholder={placeholder}
     />
-    {error && touched && (
-      <Label className='input__feedback'>{error}</Label>
-    )}
+    {error && touched && <Label className='input__feedback'>{error}</Label>}
   </div>
 )
 
@@ -71,8 +65,6 @@ export const Input = ({
       name={name}
       placeholder={placeholder}
     />
-    {error && touched && (
-      <Label className='input__feedback'>{error}</Label>
-    )}
+    {error && touched && <Label className='input__feedback'>{error}</Label>}
   </div>
 )

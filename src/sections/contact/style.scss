@@ -7,6 +7,7 @@
   display: grid;
   place-items: center;
 
-  &__container {
+  &__container > .p {
+    width: 50rem;
   }
 }

@@ -1,22 +1,25 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { HoverButton } from 'components/button'
 import { Input, InputTextField } from 'components/input'
 import { useFormik } from 'formik'
 import { validationSchemaContact } from 'lib/validation'
+import { P } from 'components/typography'
 
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY ?? ''
 const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? ''
 const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? ''
 
 const ContactForm = () => {
+  const [emailResult, setEmailResult] = useState('')
+
   const sendEmail = values => {
     emailjs.send(serviceId, templateId, values, publicKey).then(
       result => {
-        console.log('SUCCESS', result.text)
+        setEmailResult('Email sent successfully!')
       },
       error => {
-        console.log('ERROR', error.text)
+        setEmailResult('Email not sent! Contact djimovanberlo@gmail.com')
       }
     )
   }
@@ -29,9 +32,7 @@ const ContactForm = () => {
         message: '',
       },
       validationSchema: validationSchemaContact,
-      onSubmit: values => {
-        sendEmail(values)
-      },
+      onSubmit: sendEmail,
     })
 
   return (
@@ -68,7 +69,10 @@ const ContactForm = () => {
         error={errors.message}
         touched={touched.message}
       />
-      <HoverButton type='submit'>Submit</HoverButton>
+      <div className='contactForm__bot'>
+        {emailResult && <P>{emailResult}</P>}
+        <HoverButton type='submit'>Submit</HoverButton>
+      </div>
     </form>
   )
 }

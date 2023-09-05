@@ -19,10 +19,15 @@
     &:focus {
       outline: none;
     }
+
+    &:-webkit-autofill {
+      background-color: transparent !important;
+    }
   }
 
   &__textArea {
     max-width: 100%;
+    resize: none;
   }
 
   &__feedback {
