@@ -3,4 +3,11 @@
   --secondary-color: var(--light-blue);
   --background-color: var(--black);
   --color: var(--white);
+
+  display: grid;
+  place-items: center;
+
+  &__container > .p {
+    width: 50rem;
+  }
 }

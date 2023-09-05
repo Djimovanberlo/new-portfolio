@@ -5,12 +5,12 @@ const clamp = (value: number) => Math.max(0, value)
 
 const isBetween = (value: number, floor: number, ceil: number) => value >= floor && value <= ceil
 
-export const useScrollspy = (ids: SectionNames[], offset: number = 0) => {
+export const useScrollspy = ({ ids, offset = 0 }: { ids: SectionNames[]; offset: number }) => {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
     const listener = () => {
-      const scroll = window.pageYOffset
+      const scroll = window.scrollY
 
       const position = ids
         .map(id => {

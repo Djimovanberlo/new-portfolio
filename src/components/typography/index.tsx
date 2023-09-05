@@ -4,6 +4,12 @@ export const P = ({ style = {}, className = '', children }) => (
   </p>
 )
 
+export const Label = ({ style = {}, className = '', children }) => (
+  <label style={style} className={`label ${className}`}>
+    {children}
+  </label>
+)
+
 export const H1 = ({ style = {}, className = '', isUnderlined = false, children }) => (
   <h1 style={style} data-underline={String(isUnderlined)} className={`h1 ${className}`}>
     {children}

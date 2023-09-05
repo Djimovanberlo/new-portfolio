@@ -25,6 +25,8 @@
 - refactor animations; standardize times
 - favicon + tab title
 - Snap scroll!
+- Email layout + copy
+- Clean up old projects
 
 ## FLIP notes
 
