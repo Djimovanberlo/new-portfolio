@@ -30,12 +30,16 @@
 
   &__title {
     grid-area: title;
-    align-self: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    & > .h3 {
+      align-self: center;
+    }
+
     & > svg {
+      align-self: start;
       width: 2rem;
       height: 2rem;
       cursor: pointer;
