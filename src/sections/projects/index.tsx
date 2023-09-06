@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
-import Content from 'components/content'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
+import ProjectsGrid from 'components/projects-grid'
+import { H2, P } from 'components/typography'
+import ProjectsModal from 'components/projects-modal'
 import projects from 'lib/copy/projects'
-import Grid from 'components/grid'
-import ProjectContent from 'components/project-content'
-import { useRect } from 'lib/hooks/useRect'
 
 const ProjectsSection = () => {
-  const { rect: imgRect, ref: imgRef } = useRect()
-  const [projectState, setProjectState] = useState(projects.portfolio)
+  const imgRef = useRef<any>(null)
+  const projectsRef = useRef(null)
+  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO what's default here?
 
-  const handleUpdateProjectState = evt => {
-    evt.preventDefault()
-    const projectName = evt.target.id
-    setProjectState(projects[projectName])
+  const handleChangeActiveProject = (projectKey: string) => {
+    setProjectsState(projects[projectKey])
   }
 
   return (
     <Section name={SectionNames.Projects}>
-      <div className='projects__container'>
-        <Content key={projectState.title} ref={imgRef} title={projectState.title} content={<ProjectContent stackArr={projectState.stack} text={projectState.text} />} imageWrapperId='temp' />
-        <Grid handleClick={handleUpdateProjectState} imgRect={imgRect} />
+      <ProjectsModal
+        imgRef={imgRef}
+        projectsRef={projectsRef}
+        projectData={projectsState}
+      />
+      <div ref={projectsRef} className='projects__container'>
+        <H2 isUnderlined>Projects</H2>
+        <P>
+          Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem{' '}
+        </P>
+        <ProjectsGrid
+          imgRef={imgRef}
+          projectsRef={projectsRef}
+          handleChangeActiveProject={handleChangeActiveProject}
+        />
       </div>
     </Section>
   )
