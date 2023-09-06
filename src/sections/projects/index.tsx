@@ -24,7 +24,7 @@ const ProjectsSection = () => {
         projectData={projectsState}
       />
       <div ref={projectsRef} className='projects__container'>
-        <H2>Projects</H2>
+        <H2 isUnderlined>Projects</H2>
         <P>
           Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem{' '}
         </P>

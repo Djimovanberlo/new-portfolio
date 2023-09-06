@@ -3,15 +3,11 @@ import { RxCross2 } from 'react-icons/rx'
 import TechStack from 'components/tech-stack'
 import { H3, P } from 'components/typography'
 import getFlipProperties from 'lib/flip'
-import { useRef } from 'react'
-import { useOnClickOutside } from 'usehooks-ts'
 
 const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
-  const modalRef = useRef(null)
   const { title, text, img, githubLink, projectLink, stack } = projectData
 
   const handleClick = () => {
-    console.log('PTOC')
     const dataImage = imgRef?.current?.getAttribute('data-image')
     const cell = document.querySelector(`[data-key="${dataImage}"]`)
 
@@ -34,10 +30,8 @@ const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
     cell?.animate(transforms, options)
   }
 
-  useOnClickOutside(modalRef, handleClick)
-
   return (
-    <div id='projectsModal' className='projectsModal'>
+    <div className='projectsModal'>
       <img
         ref={imgRef}
         src={img}

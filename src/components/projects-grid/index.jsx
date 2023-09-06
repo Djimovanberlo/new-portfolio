@@ -15,7 +15,7 @@ const Cell = ({
 }) => {
   const cellRef = useRef(null)
 
-  const handleClickWolla = () => {
+  const handleClick = () => {
     handleChangeActiveProject(id)
     const modalEl = imgRef.current.parentElement
 
@@ -27,7 +27,6 @@ const Cell = ({
     )
 
     imgRef.current.setAttribute('data-image', title)
-    // imgRef.current.setAttribute('src', cellRef.current.getAttribute('src'))
 
     const prevRect = cellRef.current.getBoundingClientRect()
     const finalRect = imgRef.current.getBoundingClientRect()
@@ -43,7 +42,7 @@ const Cell = ({
       className='projectsGrid__cell'
       alt={title}
       data-key={title}
-      onClick={handleClickWolla}
+      onClick={handleClick}
       src={img}
     />
   )
