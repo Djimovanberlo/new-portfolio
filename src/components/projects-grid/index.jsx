@@ -5,17 +5,25 @@ import getFlipProperties from 'lib/flip'
 
 //TODO TSX
 //TODO clean!
-const Cell = ({ title, img, imgRef, projectsRef }) => {
+const Cell = ({
+  id,
+  title,
+  img,
+  imgRef,
+  projectsRef,
+  handleChangeActiveProject,
+}) => {
   const cellRef = useRef(null)
 
   const handleClick = () => {
+    handleChangeActiveProject(id)
     const modalEl = imgRef.current.parentElement
 
     modalEl.style.setProperty('display', 'grid')
     projectsRef.current.style.setProperty('opacity', 0)
 
     imgRef.current.setAttribute('data-image', title)
-    imgRef.current.setAttribute('src', cellRef.current.getAttribute('src'))
+    // imgRef.current.setAttribute('src', cellRef.current.getAttribute('src'))
 
     const prevRect = cellRef.current.getBoundingClientRect()
     const finalRect = imgRef.current.getBoundingClientRect()
@@ -37,18 +45,20 @@ const Cell = ({ title, img, imgRef, projectsRef }) => {
   )
 }
 
-const ProjectsGrid = ({ imgRef, projectsRef }) => {
+const ProjectsGrid = ({ imgRef, projectsRef, handleChangeActiveProject }) => {
   const id = useId()
 
   return (
     <div className='projectsGrid'>
-      {Object.values(projects).map(({ title, img }, index) => (
+      {Object.entries(projects).map(([key, { title, img }]) => (
         <Cell
-          key={id + index}
+          key={id + key}
+          id={key}
           img={img}
           title={title}
           imgRef={imgRef}
-          projectsRef={projectsRef}>
+          projectsRef={projectsRef}
+          handleChangeActiveProject={handleChangeActiveProject}>
           {title}
         </Cell>
       ))}

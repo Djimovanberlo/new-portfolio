@@ -1,7 +1,9 @@
 import { H3, P } from 'components/typography'
 import getFlipProperties from 'lib/flip'
 
-const ProjectsModal = ({ imgRef, projectsRef }) => {
+const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
+  const { title, text, img, stack } = projectData
+
   const handleClick = () => {
     const dataImage = imgRef?.current?.getAttribute('data-image')
     const cell = document.querySelector(`[data-key="${dataImage}"]`)
@@ -25,12 +27,13 @@ const ProjectsModal = ({ imgRef, projectsRef }) => {
     <div id='projectsModal' className='projectsModal'>
       <img
         ref={imgRef}
+        src={img}
         alt='projectImg'
         onClick={handleClick}
         className='projectsModal__img'
       />
-      <H3 className='projectsModal__title'>Modal</H3>
-      <P className='projectsModal__body'>content</P>
+      <H3 className='projectsModal__title'>{title}</H3>
+      <P className='projectsModal__body'>{text}</P>
     </div>
   )
 }
