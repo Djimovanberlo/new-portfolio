@@ -28,7 +28,7 @@ const Cell = ({ title, img, imgRef, projectsRef }) => {
   return (
     <img
       ref={cellRef}
-      className='grid__cell'
+      className='projectsGrid__cell'
       alt={title}
       data-key={title}
       onClick={handleClick}
@@ -37,14 +37,13 @@ const Cell = ({ title, img, imgRef, projectsRef }) => {
   )
 }
 
-const Grid = ({ imgRef, projectsRef }) => {
+const ProjectsGrid = ({ imgRef, projectsRef }) => {
   const id = useId()
 
   return (
-    <div className='grid'>
+    <div className='projectsGrid'>
       {Object.values(projects).map(({ title, img }, index) => (
         <Cell
-          className='grid__cell'
           key={id + index}
           img={img}
           title={title}
@@ -57,4 +56,4 @@ const Grid = ({ imgRef, projectsRef }) => {
   )
 }
 
-export default Grid
+export default ProjectsGrid
