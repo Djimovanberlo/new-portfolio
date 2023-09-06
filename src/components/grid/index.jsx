@@ -1,7 +1,7 @@
 import { useId, useRef } from 'react'
 
 import projects from 'lib/copy/projects'
-
+//TODO TSX
 //TODO clean!
 const Cell = ({ title, img, imgRef, projectsRef }) => {
   const cellRef = useRef(null)
