@@ -23,14 +23,14 @@ const ProjectsModal = ({ imgRef, projectsRef }) => {
 
   return (
     <div id='projectsModal' className='projectsModal'>
-      <H3>MODAL</H3>
-      <P>content</P>
       <img
         ref={imgRef}
         alt='projectImg'
         onClick={handleClick}
         className='projectsModal__img'
       />
+      <H3 className='projectsModal__title'>Modal</H3>
+      <P className='projectsModal__body'>content</P>
     </div>
   )
 }

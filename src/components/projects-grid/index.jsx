@@ -11,7 +11,7 @@ const Cell = ({ title, img, imgRef, projectsRef }) => {
   const handleClick = () => {
     const modalEl = imgRef.current.parentElement
 
-    modalEl.style.setProperty('display', 'block')
+    modalEl.style.setProperty('display', 'grid')
     projectsRef.current.style.setProperty('opacity', 0)
 
     imgRef.current.setAttribute('data-image', title)
