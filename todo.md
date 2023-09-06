@@ -13,3 +13,6 @@
 - Email layout + copy
 - Clean up old projects
 - add stack to about professional
+- readme
+- deploy
+- handle github profile page + link
