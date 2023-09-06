@@ -1,4 +1,5 @@
 import { H3, P } from 'components/typography'
+import getFlipProperties from 'lib/flip'
 
 const ProjectsModal = ({ imgRef, projectsRef }) => {
   const handleClick = () => {
@@ -12,37 +13,24 @@ const ProjectsModal = ({ imgRef, projectsRef }) => {
     modalEl.style.display = 'none'
     projectsRef.current.style.opacity = 1
 
-    cell?.animate(
-      [
-        {
-          zIndex: 2,
-          transform: `
-            translateX(${imgRect.left - cellRect!.left}px)
-            translateY(${imgRect.top - cellRect!.top}px)
-            scale(${imgRect.width / cellRect!.width})
-          `,
-        },
-        {
-          zIndex: 2,
-          transform: `
-            translateX(0)
-            translateY(0)
-            scale(1)
-           `,
-        },
-      ],
-      {
-        duration: 600,
-        easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
-      }
-    )
+    const { transforms, options } = getFlipProperties({
+      prevRect: imgRect,
+      finalRect: cellRect!,
+    })
+
+    cell?.animate(transforms, options)
   }
 
   return (
     <div id='projectsModal' className='projectsModal'>
       <H3>MODAL</H3>
       <P>content</P>
-      <img ref={imgRef} onClick={handleClick} className='projectsModal__img' />
+      <img
+        ref={imgRef}
+        alt='projectImg'
+        onClick={handleClick}
+        className='projectsModal__img'
+      />
     </div>
   )
 }
