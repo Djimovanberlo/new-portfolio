@@ -32,7 +32,9 @@ const Timeline = () => {
   ]
 
   const data = temp.flatMap(({ icon, tooltipText }, index) => {
-    const element = <TimelineIcon key={index} tooltipChildren={tooltipText} icon={icon} />
+    const element = (
+      <TimelineIcon key={index} tooltipChildren={tooltipText} icon={icon} />
+    )
     const separator = <div key={`hr-${index}`} className='timeline__line' />
     return [element, separator]
   })
