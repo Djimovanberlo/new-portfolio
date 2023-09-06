@@ -28,6 +28,7 @@
 - Snap scroll!
 - Email layout + copy
 - Clean up old projects
+- add stack to about professional
 
 ## FLIP notes
 

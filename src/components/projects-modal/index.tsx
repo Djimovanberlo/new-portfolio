@@ -1,8 +1,11 @@
+import { RxCross2 } from 'react-icons/rx'
+
+import TechStack from 'components/tech-stack'
 import { H3, P } from 'components/typography'
 import getFlipProperties from 'lib/flip'
 
 const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
-  const { title, text, img, stack } = projectData
+  const { title, text, img, githubLink, projectLink, stack } = projectData
 
   const handleClick = () => {
     const dataImage = imgRef?.current?.getAttribute('data-image')
@@ -29,11 +32,19 @@ const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
         ref={imgRef}
         src={img}
         alt='projectImg'
-        onClick={handleClick}
         className='projectsModal__img'
       />
-      <H3 className='projectsModal__title'>{title}</H3>
+      <div className='projectsModal__title'>
+        <H3>{title}</H3>
+        <RxCross2 onClick={handleClick} />
+      </div>
       <P className='projectsModal__body'>{text}</P>
+      <TechStack
+        className='projectsModal__stack'
+        techStack={stack}
+        githubLink={githubLink}
+        projectLink={projectLink}
+      />
     </div>
   )
 }
