@@ -7,7 +7,7 @@ const sisoe = {
 
 const taalkundig = {
   title: 'Taalkundig',
-  text: 'Taalkundig is a web application that allows users to create and share their own stories. It is a project that I have been working on for a while now and I am very proud of it. It is a full stack application that uses React, Redux, Node.js, Express, MongoDB and Mongoose.',
+  text: 'Taalkundig is a web application that allows users to create and share their own stories. It is a project that I have been working on for a while now and I am very proud of it. It is a full stack application that uses React, Redux, Node.js, Express, MongoDB and Mongoose. ',
   img: 'https://picsum.photos/150',
   stack: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
 }
@@ -54,6 +54,15 @@ const dinoGame = {
   stack: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
 }
 
-const projects = { sisoe, taalkundig, talentCalculator, portfolio, weddingSite, cardGenerator, ancientBasement, dinoGame }
+const projects = {
+  sisoe,
+  taalkundig,
+  talentCalculator,
+  portfolio,
+  weddingSite,
+  cardGenerator,
+  ancientBasement,
+  dinoGame,
+}
 
 export default projects

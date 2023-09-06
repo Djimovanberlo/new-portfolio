@@ -7,21 +7,25 @@
   left: 0;
   right: 0;
   z-index: 100;
-  max-width: 550px;
+  max-width: 650px;
+  padding: $space-md;
+  border: 2px solid black;
 
   gap: $space-sm;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 2fr 3fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
     'img title'
-    'body body'
-    'body body'
+    'img body'
+    'img body'
+    'img body'
     'stack stack';
 
   &__img {
-    width: 6rem;
-    height: 6rem;
     grid-area: img;
+    width: 100%;
+    justify-self: start;
+    align-self: start;
   }
 
   & > .h3 {
