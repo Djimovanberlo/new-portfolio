@@ -8,14 +8,17 @@
   background-color: var(--background-color);
   color: var(--color);
   transition: all 0.5s ease-in-out;
-  padding: $space-xs $space-sm;
+  padding: $space-xs;
+
+  @include screen-md {
+    padding: $space-xs $space-sm;
+  }
 
   &[data-name='banner'] {
     --primary-color: var(--light-blue);
     --secondary-color: var(--black);
     --background-color: 'transparent';
     --color: var(--white);
-    // --color: var(--light-blue);
   }
 
   &[data-name='about'] {
@@ -28,10 +31,8 @@
   &[data-name='projects'] {
     --primary-color: var(--light-blue);
     --secondary-color: var(--black);
-    // --secondary-color: var(--black);
     --background-color: var(--black);
     --color: var(--white);
-    // --color: var(--light-blue);
   }
 
   &[data-name='contact'] {

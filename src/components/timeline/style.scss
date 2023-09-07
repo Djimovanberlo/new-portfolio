@@ -30,7 +30,7 @@ $tooltip-width: 12.5rem;
 }
 
 .timeline {
-  display: flex;
+  display: none;
   align-items: center;
   margin-top: $tooltip-max-height;
   width: min(100%, 800px);
@@ -63,5 +63,9 @@ $tooltip-width: 12.5rem;
     &::after {
       right: 0;
     }
+  }
+
+  @include screen-md {
+    display: flex;
   }
 }

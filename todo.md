@@ -12,7 +12,7 @@
 - Snap scroll!
 - Email layout + copy
 - Clean up old projects
-- add stack to about professional
+- add stack to about professional + nextjs
 - readme
 - deploy
 - handle github profile page + link

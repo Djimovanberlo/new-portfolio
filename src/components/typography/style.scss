@@ -3,6 +3,7 @@
 .h3 {
   font-family: 'CrimsonText-Regular', serif;
   font-weight: normal;
+  line-height: 100%;
 
   &[data-underline='true'] {
     text-decoration: underline;
@@ -17,26 +18,54 @@
 }
 
 .p {
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: 0.75rem;
+  line-height: 175%;
+
+  @include screen-md {
+    font-size: 1rem;
+  }
 }
 
 .label {
-  font-size: 0.65rem;
-  line-height: 1rem;
+  font-size: 0.5rem;
+
+  @include screen-md {
+    font-size: 0.65rem;
+  }
 }
 
 .h1 {
-  font-size: 12rem;
-  line-height: 13rem;
+  font-size: 6rem;
+
+  @include screen-lg {
+    font-size: 9rem;
+  }
+
+  @include screen-xl {
+    font-size: 12rem;
+  }
 }
 
 .h2 {
-  font-size: 4rem;
-  line-height: 4.5rem;
+  font-size: 2rem;
+
+  @include screen-lg {
+    font-size: 3rem;
+  }
+
+  @include screen-xl {
+    font-size: 4rem;
+  }
 }
 
 .h3 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1rem;
+
+  @include screen-lg {
+    font-size: 1.5rem;
+  }
+
+  @include screen-xl {
+    font-size: 2rem;
+  }
 }

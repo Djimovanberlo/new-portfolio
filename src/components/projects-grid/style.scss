@@ -1,6 +1,6 @@
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: $space-xs;
   width: fit-content;
   margin-inline: auto;
@@ -22,5 +22,9 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  @include screen-md {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

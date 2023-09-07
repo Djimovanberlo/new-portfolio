@@ -1,19 +1,34 @@
 .content {
   &__imageText {
-    display: grid;
-    grid-template-columns: minmax(200px, 2fr) minmax(100px, 1fr);
-    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-md;
+
+    @include screen-md {
+      align-items: flex-start;
+      flex-direction: row;
+    }
   }
 
   &__imageWrapper {
-    justify-self: right;
-    width: 70%;
-    aspect-ratio: 1 / 1;
+    width: 20vh;
+    height: 20vh;
 
     & > img {
+      object-fit: cover;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+
+      @include screen-md {
+        min-width: 20vh;
+        min-height: 20vh;
+      }
+    }
+
+    @include screen-md {
+      width: 20vh;
+      height: 20vh;
     }
   }
 }
