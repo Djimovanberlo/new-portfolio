@@ -15,6 +15,8 @@ const AboutSection = () => {
     useButtonCollection({ buttonsClass })
   const [aboutState, setAboutState] = useState(about.personal)
 
+  console.log('???')
+
   const handleClick = evt => {
     evt.preventDefault()
     const rect = evt.target.getBoundingClientRect()
@@ -25,8 +27,8 @@ const AboutSection = () => {
   }
 
   const renderButtons = Object.entries(about).map(([key, { title }], index) => {
-    // const isActive = aboutState.title === title
-    const isActive = false
+    const isActive = aboutState.title === title
+    // const isActive = false
     return (
       <Button
         key={index}

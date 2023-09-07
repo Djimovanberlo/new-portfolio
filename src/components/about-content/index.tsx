@@ -1,7 +1,6 @@
 import { H2, P } from 'components/typography'
 
 const AboutContent = ({ className = '', title, text, stack, imgSrc }) => {
-  console.log('S', title)
   return (
     <div className={`aboutContent ${className}`}>
       <H2 isUnderlined>{title}</H2>

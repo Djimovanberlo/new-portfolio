@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef } from 'react'
+import { CSSProperties, Ref, forwardRef, useEffect } from 'react'
 
 interface Props {
   buttons: JSX.Element[]
@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ButtonCollection = forwardRef<HTMLDivElement, Props>(
-  ({ buttons, backgroundPos }, ref) => {
+  ({ buttons, backgroundPos }, ref: Ref<HTMLDivElement>) => {
     return (
       <div
         className='buttonCollection'

@@ -26,17 +26,14 @@ const useButtonCollection = ({ buttonsClass }: Props) => {
   }
 
   useEffect(() => {
-    const activeButton = document.querySelector(
-      `button.${buttonsClass}[data-active="true"]`
-    ) as HTMLButtonElement
-
-    if (activeButton) {
-      requestAnimationFrame(() => {
-        const rect = activeButton.getBoundingClientRect()
-        handleUpdateButtonPos(rect)
-      })
-    }
-  }, [handleUpdateButtonPos, buttonsClass])
+    const initialButton = buttonCollectionRef?.current!
+      .children[0] as HTMLElement
+    const initalRect = initialButton.getBoundingClientRect()
+    const initialButtonStyle = window.getComputedStyle(initialButton)
+    const initialButtonWidth = initialButton.clientWidth
+    handleUpdateButtonPos(initalRect)
+    // })
+  }, [])
 
   return { buttonCollectionRef, backgroundPos, handleUpdateButtonPos }
 }
