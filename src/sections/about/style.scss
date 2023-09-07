@@ -1,25 +1,3 @@
-// @keyframes fadeInRight {
-//   0% {
-//     opacity: 0;
-//     transform: translateX(-20px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
-
-// @keyframes fadeInLeft {
-//   0% {
-//     opacity: 0;
-//     transform: translateX(20px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
-
 $animation-duration: 1s;
 
 .about {
@@ -39,17 +17,20 @@ $animation-duration: 1s;
 
     & .about__contentPersonal,
     & .about__contentProfessional {
+      @include fade-in;
       animation-duration: $animation-duration;
       animation-timing-function: ease-in-out;
       animation-fill-mode: both;
     }
 
     & .about__contentPersonal {
-      animation-name: fadeInLeft;
+      @include slide-in-left;
+      animation-name: fade-in, slide-in-left;
     }
 
     & .about__contentProfessional {
-      animation-name: fadeInRight;
+      @include slide-in-right;
+      animation-name: fade-in, slide-in-right;
     }
   }
 }
