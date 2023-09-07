@@ -1,11 +1,11 @@
 ### Misc
 
-- Responsiveness
 - Write copy / get images
 - Check //TODO
 - Check any
 - rmv useRect() ?
 - check unused props
+- grid cell with title
 - order imports
 - refactor animations; standardize times
 - favicon + tab title

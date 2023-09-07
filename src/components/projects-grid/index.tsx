@@ -3,8 +3,6 @@ import { useId, useRef } from 'react'
 import projects from 'lib/copy/projects'
 import getFlipProperties from 'lib/flip'
 
-//TODO TSX
-//TODO clean!
 const Cell = ({
   id,
   title,
@@ -13,7 +11,7 @@ const Cell = ({
   projectsRef,
   handleChangeActiveProject,
 }) => {
-  const cellRef = useRef(null)
+  const cellRef = useRef<HTMLImageElement>(null)
 
   const handleClick = () => {
     handleChangeActiveProject(id)
@@ -28,7 +26,7 @@ const Cell = ({
 
     imgRef.current.setAttribute('data-image', title)
 
-    const prevRect = cellRef.current.getBoundingClientRect()
+    const prevRect = cellRef?.current?.getBoundingClientRect()!
     const finalRect = imgRef.current.getBoundingClientRect()
 
     const { transforms, options } = getFlipProperties({ prevRect, finalRect })
@@ -61,9 +59,8 @@ const ProjectsGrid = ({ imgRef, projectsRef, handleChangeActiveProject }) => {
           title={title}
           imgRef={imgRef}
           projectsRef={projectsRef}
-          handleChangeActiveProject={handleChangeActiveProject}>
-          {title}
-        </Cell>
+          handleChangeActiveProject={handleChangeActiveProject}
+        />
       ))}
     </div>
   )
