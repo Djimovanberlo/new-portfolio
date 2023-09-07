@@ -4,7 +4,7 @@
   gap: $space-md;
   padding-top: $space-md;
   margin-inline: auto;
-  width: 25rem;
+  width: min(100%, 25rem);
 
   &__bot {
     display: flex;

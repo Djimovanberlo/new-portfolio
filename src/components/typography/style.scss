@@ -37,11 +37,11 @@
 .h1 {
   font-size: 6rem;
 
-  @include screen-sm {
+  @include screen-lg {
     font-size: 9rem;
   }
 
-  @include screen-lg {
+  @include screen-xl {
     font-size: 12rem;
   }
 }
@@ -49,11 +49,11 @@
 .h2 {
   font-size: 2rem;
 
-  @include screen-sm {
+  @include screen-lg {
     font-size: 3rem;
   }
 
-  @include screen-lg {
+  @include screen-xl {
     font-size: 4rem;
   }
 }
@@ -61,11 +61,11 @@
 .h3 {
   font-size: 1rem;
 
-  @include screen-sm {
+  @include screen-lg {
     font-size: 1.5rem;
   }
 
-  @include screen-lg {
+  @include screen-xl {
     font-size: 2rem;
   }
 }
