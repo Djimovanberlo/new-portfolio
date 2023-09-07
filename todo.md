@@ -1,8 +1,6 @@
 ### Misc
 
 - Write copy / get images
-- Check any
-- rmv useRect() ?
 - check unused props
 - grid cell with title
 - order imports
