@@ -8,9 +8,9 @@ import ProjectsModal from 'components/projects-modal'
 import projects from 'lib/copy/projects'
 
 const ProjectsSection = () => {
-  const imgRef = useRef<any>(null)
-  const projectsRef = useRef(null)
-  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO when doing content what's default here?
+  const imgRef = useRef<HTMLImageElement>(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
+  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO when doing content - what's default here?
 
   const handleChangeActiveProject = (projectKey: string) => {
     setProjectsState(projects[projectKey])
