@@ -2,6 +2,7 @@ import { useId, useRef } from 'react'
 
 import projects from 'lib/copy/projects'
 import getFlipProperties from 'lib/flip'
+import { P } from 'components/typography'
 
 const Cell = ({
   id,
@@ -35,14 +36,18 @@ const Cell = ({
   }
 
   return (
-    <img
-      ref={cellRef}
-      className='projectsGrid__cell'
-      alt={title}
-      data-key={title}
-      onClick={handleClick}
-      src={imgSrc}
-    />
+    <div className='projectsGrid__cell'>
+      <img
+        ref={cellRef}
+        alt={title}
+        data-key={title}
+        onClick={handleClick}
+        src={imgSrc}
+      />
+      <span onClick={handleClick}>
+        <P>{title}</P>
+      </span>
+    </div>
   )
 }
 

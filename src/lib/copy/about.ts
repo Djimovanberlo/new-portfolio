@@ -28,12 +28,14 @@ const personal = {
   title: 'Personal',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
   img: 'https://via.placeholder.com/150',
+  stack: ['react', 'typeScript', 'sass'],
 }
 
 const professional = {
   title: 'Professional',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
   img: 'https://via.placeholder.com/150',
+  stack: [],
 }
 
 const about = { personal, professional }

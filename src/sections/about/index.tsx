@@ -8,7 +8,6 @@ import ButtonCollection from 'components/button-collection'
 import AboutContent from 'components/about-content'
 import Timeline from 'components/timeline'
 import Button from 'components/button'
-import { P } from 'components/typography'
 
 const AboutSection = () => {
   const buttonsClass = 'aboutButton'
@@ -25,8 +24,9 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = Object.entries(about).map(([key, { title }], index) => {
-    const isActive = aboutState.title === title
+  const renderButtons = Object.entries(about).map(([key, { title }], index) => {
+    // const isActive = aboutState.title === title
+    const isActive = false
     return (
       <Button
         key={index}
@@ -46,11 +46,12 @@ const AboutSection = () => {
           key={aboutState.title}
           className={`about__content${aboutState.title}`}
           title={aboutState.title}
-          content={<P>{aboutState.text}</P>}
+          text={aboutState.text}
+          stack={aboutState.stack}
           imgSrc={aboutState.img}
         />
         <ButtonCollection
-          buttons={buttons}
+          buttons={renderButtons}
           backgroundPos={backgroundPos}
           ref={buttonCollectionRef}
         />

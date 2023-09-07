@@ -5,7 +5,7 @@ import TechStack from 'components/tech-stack'
 import { H3, P } from 'components/typography'
 
 const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
-  const { title, text, img, githubLink, projectLink, stack } = projectData
+  const { title, text, imgSrc, githubLink, projectLink, stack } = projectData
 
   const handleClick = () => {
     const dataImage = imgRef?.current?.getAttribute('data-image')
@@ -34,7 +34,7 @@ const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
     <div className='projectsModal'>
       <img
         ref={imgRef}
-        src={img}
+        src={imgSrc}
         alt='projectImg'
         className='projectsModal__img'
       />

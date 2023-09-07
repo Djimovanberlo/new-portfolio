@@ -17,7 +17,7 @@ const Nav = ({ activeId }) => {
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const buttons = Object.values(SectionNames).map((title, index) => {
+  const renderButtons = Object.values(SectionNames).map((title, index) => {
     const isActive = activeId === title
 
     return index === 0 ? (
@@ -44,7 +44,7 @@ const Nav = ({ activeId }) => {
   return (
     <nav ref={buttonCollectionRef} className='nav'>
       <ButtonCollection
-        buttons={buttons}
+        buttons={renderButtons}
         backgroundPos={backgroundPos}
         ref={buttonCollectionRef}
       />
