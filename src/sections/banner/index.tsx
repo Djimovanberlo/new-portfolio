@@ -1,9 +1,9 @@
 import { CSSProperties, useId } from 'react'
 import { GoArrowDown } from 'react-icons/go'
 
-import { H1, H2 } from 'components/typography'
 import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
+import { H1, H2 } from 'components/typography'
 
 const BannerSection = () => {
   const id = useId()
@@ -37,9 +37,15 @@ const BannerSection = () => {
             </span>
           ))}
         </H1>
-        <H2 style={{ '--delay': djimoArr.length } as CSSProperties}>Frontend Developer</H2>
+        <H2 style={{ '--delay': djimoArr.length } as CSSProperties}>
+          Frontend Developer
+        </H2>
       </div>
-      <GoArrowDown onClick={handleClickScroll} style={{ '--delay': djimoArr.length } as CSSProperties} className='banner__arrow' />
+      <GoArrowDown
+        onClick={handleClickScroll}
+        style={{ '--delay': djimoArr.length } as CSSProperties}
+        className='banner__arrow'
+      />
     </Section>
   )
 }

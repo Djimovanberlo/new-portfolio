@@ -1,18 +1,12 @@
-import { forwardRef } from 'react'
-
 export const HoverButton = ({
-  id = '',
   className = '',
-  name = '',
   type,
   handleClick = () => {},
   children,
 }) => {
   return (
     <button
-      id={id}
       className={`hoverButton ${className}`}
-      name={name}
       type={type}
       onClick={handleClick}>
       {children}
@@ -21,7 +15,6 @@ export const HoverButton = ({
 }
 
 const Button = ({
-  id = '',
   name = '',
   className = '',
   isActive,
@@ -29,7 +22,6 @@ const Button = ({
   children,
 }) => (
   <button
-    id={id}
     className={`button ${className ?? ''}`}
     name={name}
     onClick={handleClick}

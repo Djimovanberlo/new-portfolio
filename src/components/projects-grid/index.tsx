@@ -6,7 +6,7 @@ import getFlipProperties from 'lib/flip'
 const Cell = ({
   id,
   title,
-  img,
+  imgSrc,
   imgRef,
   projectsRef,
   handleChangeActiveProject,
@@ -41,7 +41,7 @@ const Cell = ({
       alt={title}
       data-key={title}
       onClick={handleClick}
-      src={img}
+      src={imgSrc}
     />
   )
 }
@@ -51,11 +51,11 @@ const ProjectsGrid = ({ imgRef, projectsRef, handleChangeActiveProject }) => {
 
   return (
     <div className='projectsGrid'>
-      {Object.entries(projects).map(([key, { title, img }]) => (
+      {Object.entries(projects).map(([key, { title, imgSrc }]) => (
         <Cell
           key={id + key}
           id={key}
-          img={img}
+          imgSrc={imgSrc}
           title={title}
           imgRef={imgRef}
           projectsRef={projectsRef}

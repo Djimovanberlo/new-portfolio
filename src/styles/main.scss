@@ -9,7 +9,6 @@
 @import './app.scss';
 
 // Layout
-@import '../layout/footer/style.scss';
 @import '../layout/header/style.scss';
 @import '../layout/main/style.scss';
 @import '../layout/nav/style.scss';
@@ -22,11 +21,10 @@
 @import '../sections/projects/style.scss';
 
 // Components
+@import '../components/about-content/style.scss';
 @import '../components/button/style.scss';
 @import '../components/button-collection/style.scss';
 @import '../components/contact-form/style.scss';
-@import '../components/content/style.scss';
-@import '../components/icon/style.scss';
 @import '../components/input/style.scss';
 @import '../components/projects-grid/style.scss';
 @import '../components/projects-modal/style.scss';
@@ -34,5 +32,4 @@
 @import '../components/stack-list/style.scss';
 @import '../components/tech-stack/style.scss';
 @import '../components/timeline/style.scss';
-@import '../components/tooltip/style.scss';
 @import '../components/typography/style.scss';

@@ -5,7 +5,8 @@ import useButtonCollection from 'lib/hooks/useButtonCollection'
 
 const Nav = ({ activeId }) => {
   const buttonsClass = 'navButton'
-  const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } = useButtonCollection({ buttonsClass })
+  const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } =
+    useButtonCollection({ buttonsClass })
 
   const handleClick = evt => {
     evt.preventDefault()
@@ -20,11 +21,21 @@ const Nav = ({ activeId }) => {
     const isActive = activeId === title
 
     return index === 0 ? (
-      <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
+      <Button
+        key={index}
+        className={buttonsClass}
+        name={title}
+        handleClick={handleClick}
+        isActive={isActive}>
         Djimo
       </Button>
     ) : (
-      <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
+      <Button
+        key={index}
+        className={buttonsClass}
+        name={title}
+        handleClick={handleClick}
+        isActive={isActive}>
         {title}
       </Button>
     )
@@ -32,7 +43,11 @@ const Nav = ({ activeId }) => {
 
   return (
     <nav ref={buttonCollectionRef} className='nav'>
-      <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} ref={buttonCollectionRef} />
+      <ButtonCollection
+        buttons={buttons}
+        backgroundPos={backgroundPos}
+        ref={buttonCollectionRef}
+      />
     </nav>
   )
 }

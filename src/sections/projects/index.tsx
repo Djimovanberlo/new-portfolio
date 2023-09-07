@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react'
 
 import { SectionNames } from 'interfaces/layout'
+import projects from 'lib/copy/projects'
 import Section from 'layout/section'
 import ProjectsGrid from 'components/projects-grid'
 import { H2, P } from 'components/typography'
 import ProjectsModal from 'components/projects-modal'
-import projects from 'lib/copy/projects'
 
 const ProjectsSection = () => {
   const imgRef = useRef<HTMLImageElement>(null)

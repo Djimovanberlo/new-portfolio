@@ -1,8 +1,8 @@
 import { RxCross2 } from 'react-icons/rx'
 
+import getFlipProperties from 'lib/flip'
 import TechStack from 'components/tech-stack'
 import { H3, P } from 'components/typography'
-import getFlipProperties from 'lib/flip'
 
 const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
   const { title, text, img, githubLink, projectLink, stack } = projectData

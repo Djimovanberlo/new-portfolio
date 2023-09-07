@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import { useFormik } from 'formik'
 import emailjs from '@emailjs/browser'
+
+import { validationSchemaContact } from 'lib/validation'
 import { HoverButton } from 'components/button'
 import { Input, InputTextField } from 'components/input'
-import { useFormik } from 'formik'
-import { validationSchemaContact } from 'lib/validation'
 import { P } from 'components/typography'
 
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY ?? ''

@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
-import about from 'lib/copy/about'
 import { SectionNames } from 'interfaces/layout'
+import about from 'lib/copy/about'
+import useButtonCollection from 'lib/hooks/useButtonCollection'
 import Section from 'layout/section'
 import ButtonCollection from 'components/button-collection'
-import Content from 'components/content'
+import AboutContent from 'components/about-content'
 import Timeline from 'components/timeline'
 import Button from 'components/button'
 import { P } from 'components/typography'
-import useButtonCollection from 'lib/hooks/useButtonCollection'
 
 const AboutSection = () => {
   const buttonsClass = 'aboutButton'
@@ -42,13 +42,12 @@ const AboutSection = () => {
   return (
     <Section name={SectionNames.About}>
       <div className='about__container'>
-        <Content
+        <AboutContent
           key={aboutState.title}
           className={`about__content${aboutState.title}`}
           title={aboutState.title}
           content={<P>{aboutState.text}</P>}
-          imageWrapperId='aboutContentImage'
-          image={<img src={aboutState.img} alt='placeholder' />}
+          imgSrc={aboutState.img}
         />
         <ButtonCollection
           buttons={buttons}

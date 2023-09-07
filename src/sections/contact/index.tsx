@@ -1,6 +1,6 @@
+import { SectionNames } from 'interfaces/layout'
 import ContactForm from 'components/contact-form'
 import { H2, P } from 'components/typography'
-import { SectionNames } from 'interfaces/layout'
 import Section from 'layout/section'
 
 const ContactSection = () => (
