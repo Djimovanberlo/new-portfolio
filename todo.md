@@ -16,3 +16,4 @@
 - readme
 - deploy
 - handle github profile page + link
+- linkedIn
