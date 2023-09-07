@@ -53,8 +53,8 @@ $animation-duration: 1s;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     $delay: calc(var(--delay) * 0.08s);
     animation-name: fadeIn, slideIn;
     animation-duration: $animation-duration;
@@ -64,6 +64,11 @@ $animation-duration: 1s;
 
     &:hover {
       cursor: pointer;
+    }
+
+    @include screen-md {
+      width: 6rem;
+      height: 6rem;
     }
   }
 }
