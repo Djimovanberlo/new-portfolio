@@ -1,1 +1,40 @@
-//
+/*----------------------------------------------------------------*/
+
+/*
+  MEDIA QUERIES MIXINS
+  Used to define the viewport width in a media query.
+*/
+
+@mixin min-width($threshold) {
+  @media screen and (min-width: pixel-to-em($threshold)) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin screen-sm($threshold: $break-sm) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin screen-md($threshold: $break-md) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin screen-lg($threshold: $break-lg) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen-xl($threshold: $break-xl) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
