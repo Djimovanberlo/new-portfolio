@@ -43,11 +43,11 @@ const Nav = ({ activeId }) => {
 
   return (
     <nav ref={buttonCollectionRef} className='nav'>
-      <ButtonCollection
+      {/* <ButtonCollection
         buttons={renderButtons}
         backgroundPos={backgroundPos}
         ref={buttonCollectionRef}
-      />
+      /> */}
     </nav>
   )
 }

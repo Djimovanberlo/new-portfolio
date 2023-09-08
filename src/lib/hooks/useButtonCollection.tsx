@@ -25,15 +25,15 @@ const useButtonCollection = ({ buttonsClass }: Props) => {
     setBackgroundPos(relativePos)
   }
 
-  useEffect(() => {
-    const initialButton = buttonCollectionRef?.current!
-      .children[0] as HTMLElement
-    const initalRect = initialButton.getBoundingClientRect()
-    const initialButtonStyle = window.getComputedStyle(initialButton)
-    const initialButtonWidth = initialButton.clientWidth
-    handleUpdateButtonPos(initalRect)
-    // })
-  }, [])
+  // useEffect(() => {
+  //   const initialButton = buttonCollectionRef?.current!
+  //     .children[0] as HTMLElement
+  //   const initalRect = initialButton.getBoundingClientRect()
+  //   const initialButtonStyle = window.getComputedStyle(initialButton)
+  //   const initialButtonWidth = initialButton.clientWidth
+  //   handleUpdateButtonPos(initalRect)
+  //   // })
+  // }, [])
 
   return { buttonCollectionRef, backgroundPos, handleUpdateButtonPos }
 }

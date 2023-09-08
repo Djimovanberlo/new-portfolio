@@ -11,16 +11,14 @@ import Button from 'components/button'
 
 const AboutSection = () => {
   const buttonsClass = 'aboutButton'
-  const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } =
-    useButtonCollection({ buttonsClass })
+  // const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } =
+  //   useButtonCollection({ buttonsClass })
   const [aboutState, setAboutState] = useState(about.personal)
-
-  console.log('???')
 
   const handleClick = evt => {
     evt.preventDefault()
-    const rect = evt.target.getBoundingClientRect()
-    handleUpdateButtonPos(rect)
+    // const rect = evt.target.getBoundingClientRect()
+    // handleUpdateButtonPos(rect)
 
     const buttonText = evt.target.textContent
     setAboutState(about[buttonText])
@@ -41,6 +39,12 @@ const AboutSection = () => {
     )
   })
 
+  const buttons: string[] = Object.keys(about)
+  const activeButtonIndex = buttons.findIndex(
+    buttonName => buttonName === aboutState.title.toLowerCase()
+  )
+  console.log('B', buttons, activeButtonIndex)
+
   return (
     <Section name={SectionNames.About}>
       <div className='about__container'>
@@ -53,10 +57,15 @@ const AboutSection = () => {
           imgSrc={aboutState.img}
         />
         <ButtonCollection
+          activeIndex={activeButtonIndex}
+          buttons={buttons}
+          handleClick={handleClick}
+        />
+        {/* <ButtonCollection
           buttons={renderButtons}
           backgroundPos={backgroundPos}
           ref={buttonCollectionRef}
-        />
+        /> */}
         <Timeline />
       </div>
     </Section>

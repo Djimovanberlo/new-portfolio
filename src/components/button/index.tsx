@@ -17,7 +17,7 @@ export const HoverButton = ({
 const Button = ({
   name = '',
   className = '',
-  isActive,
+  isActive = false,
   handleClick,
   children,
 }) => (
