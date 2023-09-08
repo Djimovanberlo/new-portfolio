@@ -1,11 +1,6 @@
 import Button from 'components/button'
 import { CSSProperties, useEffect, useId, useRef, useState } from 'react'
 
-interface Props {
-  buttons: JSX.Element[]
-  backgroundPos: Pick<DOMRect, 'width' | 'height' | 'left'>
-}
-
 const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
   const id = useId()
   const collectionRef = useRef<HTMLDivElement>(null)
@@ -17,16 +12,19 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
 
   useEffect(() => {
     const activeEl = collectionRef?.current?.children[activeIndex]
-    const activeRect = activeEl?.getBoundingClientRect()
-    const collectionRect = collectionRef.current?.getBoundingClientRect()
-    console.log('ACTIVE RECT', activeRect)
-    const relativePos = {
-      width: activeRect!.width,
-      height: activeRect!.height,
-      left: activeRect!.left - collectionRect!.left,
-    }
 
-    setBackgroundPos(relativePos)
+    if (activeEl) {
+      const activeRect = activeEl.getBoundingClientRect()
+      const collectionRect = collectionRef.current.getBoundingClientRect()
+
+      const relativePos = {
+        width: activeRect.width,
+        height: activeRect.height,
+        left: activeRect.left - collectionRect.left,
+      }
+
+      setBackgroundPos(relativePos)
+    }
   }, [activeIndex])
 
   return (
@@ -40,14 +38,15 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
           '--height': `${backgroundPos.height}px`,
         } as CSSProperties
       }>
-      {buttons.map((buttonName, index) => {
+      {buttons.map(({ buttonName, text }, index) => {
         const isActive = activeIndex === index
         return (
           <Button
             key={id + index}
+            name={buttonName}
             isActive={isActive}
             handleClick={handleClick}>
-            {buttonName}
+            {text}
           </Button>
         )
       })}
