@@ -1,12 +1,5 @@
 import Button from 'components/button'
-import {
-  CSSProperties,
-  forwardRef,
-  useEffect,
-  useId,
-  useRef,
-  useState,
-} from 'react'
+import { CSSProperties, useEffect, useId, useRef, useState } from 'react'
 
 interface Props {
   buttons: JSX.Element[]
@@ -48,7 +41,6 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
         } as CSSProperties
       }>
       {buttons.map((buttonName, index) => {
-        console.log('BTN name', buttonName)
         const isActive = activeIndex === index
         return (
           <Button
@@ -62,23 +54,5 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
     </div>
   )
 }
-// const ButtonCollection = forwardRef<HTMLDivElement, Props>(
-//   ({ buttons, backgroundPos }, ref) => {
-//     return (
-//       <div
-//         className='buttonCollection'
-//         ref={ref}
-//         style={
-//           {
-//             '--left': `${backgroundPos.left}px`,
-//             '--width': `${backgroundPos.width}px`,
-//             '--height': `${backgroundPos.height}px`,
-//           } as CSSProperties
-//         }>
-//         {buttons}
-//       </div>
-//     )
-//   }
-// )
 
 export default ButtonCollection
