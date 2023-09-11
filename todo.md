@@ -1,7 +1,5 @@
 ### Misc
 
-- favicon + tab title
-- Snap scroll!
 - readme
 
 - handle github profile page + link
