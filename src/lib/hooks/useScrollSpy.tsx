@@ -1,4 +1,3 @@
-import { SectionNames } from 'interfaces/layout'
 import { useEffect, useState } from 'react'
 
 const clamp = (value: number) => Math.max(0, value)
