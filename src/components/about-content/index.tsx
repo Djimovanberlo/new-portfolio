@@ -1,3 +1,4 @@
+import { Stack } from 'components/tech-stack'
 import { H2, P } from 'components/typography'
 
 const AboutContent = ({ className = '', title, text, stack, imgSrc }) => {
@@ -5,9 +6,9 @@ const AboutContent = ({ className = '', title, text, stack, imgSrc }) => {
     <div className={`aboutContent ${className}`}>
       <H2 isUnderlined>{title}</H2>
       <div className='aboutContent__imageText'>
-        <div>
+        <div className='aboutContent__textWrapper'>
           <P>{text}</P>
-          {!!stack.length && <P>{stack[0]}</P>}
+          {!!stack.length && <Stack techStack={stack} />}
         </div>
         <div className='aboutContent__imageWrapper'>
           {<img alt={imgSrc} src={imgSrc} />}

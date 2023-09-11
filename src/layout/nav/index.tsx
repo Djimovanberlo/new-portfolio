@@ -1,14 +1,10 @@
-import Button from 'components/button'
 import ButtonCollection from 'components/button-collection'
 import { SectionNames } from 'interfaces/layout'
 
 const Nav = ({ activeId }) => {
-  console.log('ACTIVE ID', activeId)
-
   const handleClick = evt => {
     evt.preventDefault()
 
-    console.log('CLICK TARGET', evt.target.name)
     const element = document.getElementById(evt.target.name.toLowerCase())
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }

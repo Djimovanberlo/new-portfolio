@@ -2,6 +2,7 @@ import utrechtImg from 'assets/images/utrecht.png'
 import tromsoImg from 'assets/images/tromso.png'
 import amsterdamImg from 'assets/images/amsterdam.svg'
 import ollinImg from 'assets/images/olln.png'
+import { StackNames } from 'components/tech-stack'
 
 export const timeLine = [
   {
@@ -27,15 +28,15 @@ export const aboutTitle = 'About'
 const personal = {
   title: 'Personal',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
+  stack: [],
   img: 'https://via.placeholder.com/150',
-  stack: ['react', 'typeScript', 'sass'],
 }
 
 const professional = {
   title: 'Professional',
   text: 'This is a simple example of a React component. This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.This is a simple example of a React component.',
+  stack: Object.values(StackNames),
   img: 'https://via.placeholder.com/150',
-  stack: [],
 }
 
 const about = { personal, professional }

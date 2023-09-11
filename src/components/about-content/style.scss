@@ -11,6 +11,14 @@
     }
   }
 
+  &__textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-md;
+  }
+
   &__imageWrapper {
     width: 20vh;
     height: 20vh;
