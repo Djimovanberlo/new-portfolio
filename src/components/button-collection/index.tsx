@@ -14,16 +14,26 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
     const activeEl = collectionRef?.current?.children[activeIndex]
 
     if (activeEl) {
-      const activeRect = activeEl.getBoundingClientRect()
-      const collectionRect = collectionRef.current.getBoundingClientRect()
+      const resizeObserver = new ResizeObserver(entries => {
+        const activeRect = activeEl.getBoundingClientRect()
+        const collectionRect = collectionRef?.current?.getBoundingClientRect()!
 
-      const relativePos = {
-        width: activeRect.width,
-        height: activeRect.height,
-        left: activeRect.left - collectionRect.left,
-      }
+        for (const entry of entries) {
+          const { inlineSize, blockSize } = entry.borderBoxSize[0]
 
-      setBackgroundPos(relativePos)
+          const relativePos = {
+            width: inlineSize,
+            height: blockSize,
+            left: activeRect.left - collectionRect.left,
+          }
+
+          setBackgroundPos(relativePos)
+        }
+      })
+
+      resizeObserver.observe(activeEl)
+
+      return () => resizeObserver.unobserve(activeEl)
     }
   }, [activeIndex])
 
