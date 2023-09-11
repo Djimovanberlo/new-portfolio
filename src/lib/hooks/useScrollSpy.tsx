@@ -10,10 +10,10 @@ export const useScrollspy = ({
   ids,
   offset = 0,
 }: {
-  ids: SectionNames[]
+  ids: string[]
   offset: number
 }) => {
-  const [activeId, setActiveId] = useState(SectionNames.Banner)
+  const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
     const listener = () => {
@@ -33,7 +33,7 @@ export const useScrollspy = ({
         })
         .find(({ top, bottom }) => isBetween(scroll, top, bottom))
 
-      setActiveId(position?.id ?? SectionNames.Banner)
+      setActiveId(position?.id ?? '')
     }
 
     listener()
