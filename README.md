@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# Portfolio Djimo van Berlo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+About time I made a new portfolio. My previous one was made just after I'd finished the Codaisseur bootcamp, so it was in no way representative of my current skills. This new, 1-page portfolio contains a banner, about, projects en contact section. Some examples of frontend skills are showcased, including animation choreography, a scrollspy, a resizeObserver and Flip-technique. Have a look around! Or not, it's 100% up to you.
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I especially enjoy the mix frontend development offers: a blend of logic, styling and layout architecture. I like to
+
+## Stack
+
+This project built using [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/) and [SASS](https://sass-lang.com/).
+
+## Structure
+
+// structure
 
 ### `npm start`
 

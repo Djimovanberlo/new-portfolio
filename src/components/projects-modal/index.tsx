@@ -12,8 +12,8 @@ const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
     const cell = document.querySelector(`[data-key="${dataImage}"]`)
 
     const modalEl = imgRef.current.parentElement
-    const imgRect = imgRef.current.getBoundingClientRect()
-    const cellRect = cell?.getBoundingClientRect()
+    const prevRect = imgRef.current.getBoundingClientRect()
+    const finalRect = cell?.getBoundingClientRect()!
 
     modalEl.style.display = 'none'
     projectsRef.current.style.opacity = 1
@@ -23,8 +23,8 @@ const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
     )
 
     const { transforms, options } = getFlipProperties({
-      prevRect: imgRect,
-      finalRect: cellRect!,
+      prevRect,
+      finalRect,
     })
 
     cell?.animate(transforms, options)

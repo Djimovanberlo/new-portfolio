@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 import { SectionNames } from 'interfaces/layout'
-import projects from 'lib/copy/projects'
+import projects, { projectsIntro } from 'lib/copy/projects'
 import Section from 'layout/section'
 import ProjectsGrid from 'components/projects-grid'
 import { H2, P } from 'components/typography'
@@ -25,9 +25,7 @@ const ProjectsSection = () => {
       />
       <div ref={projectsRef} className='projects__container'>
         <H2 isUnderlined>Projects</H2>
-        <P>
-          Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem Lorem LoremLorem{' '}
-        </P>
+        <P>{projectsIntro}</P>
         <ProjectsGrid
           imgRef={imgRef}
           projectsRef={projectsRef}
