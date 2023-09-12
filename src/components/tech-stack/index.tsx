@@ -14,12 +14,14 @@ import {
   BiLogoCss3,
   BiLogoSass,
   BiLogoFirebase,
+  BiLogoRedux,
 } from 'react-icons/bi'
 
 export enum StackNames {
   React = 'react',
   TypeScript = 'typeScript',
   NextJs = 'nextJs',
+  redux = 'redux',
   GraphQL = 'graphQL',
   CSS = 'css',
   Sass = 'sass',
@@ -40,6 +42,7 @@ const stackIcons = {
   react: <BiLogoReact />,
   typeScript: <BiLogoTypescript />,
   nextJs: <SiNextdotjs />,
+  redux: <BiLogoRedux />,
   graphQL: <BiLogoGraphql />,
   css: <BiLogoCss3 />,
   sass: <BiLogoSass />,

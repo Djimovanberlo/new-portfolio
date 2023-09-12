@@ -23,6 +23,12 @@
       left: 0;
       right: 0;
       margin: 0 auto;
+
+      & > .p {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        font-family: 'WorkSans-Bold', sans-serif;
+      }
     }
 
     &:hover {
