@@ -1,6 +1,8 @@
 .stack {
   display: flex;
-  gap: $space-xs;
+  gap: $space-xs / 2;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .techIcon {

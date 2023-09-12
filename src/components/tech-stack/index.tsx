@@ -13,6 +13,7 @@ import {
   BiLogoGraphql,
   BiLogoCss3,
   BiLogoSass,
+  BiLogoFirebase,
 } from 'react-icons/bi'
 
 export enum StackNames {
@@ -24,6 +25,7 @@ export enum StackNames {
   Sass = 'sass',
   StyledComponents = 'styledComponents',
   Tailwind = 'tailwind',
+  Firebase = 'firebase',
   Contentful = 'contentFul',
 }
 
@@ -43,6 +45,7 @@ const stackIcons = {
   sass: <BiLogoSass />,
   styledComponents: <SiStyledcomponents />,
   tailwind: <SiTailwindcss />,
+  firebase: <BiLogoFirebase />,
   contentFul: <SiContentful />,
 }
 
