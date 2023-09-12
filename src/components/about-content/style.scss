@@ -1,4 +1,4 @@
-.content {
+.aboutContent {
   &__imageText {
     display: flex;
     flex-direction: column;
@@ -9,6 +9,14 @@
       align-items: flex-start;
       flex-direction: row;
     }
+  }
+
+  &__textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-md;
   }
 
   &__imageWrapper {

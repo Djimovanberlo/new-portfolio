@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react'
 
 import { SectionNames } from 'interfaces/layout'
+import projects from 'lib/copy/projects'
 import Section from 'layout/section'
 import ProjectsGrid from 'components/projects-grid'
 import { H2, P } from 'components/typography'
 import ProjectsModal from 'components/projects-modal'
-import projects from 'lib/copy/projects'
 
 const ProjectsSection = () => {
-  const imgRef = useRef<any>(null)
-  const projectsRef = useRef(null)
-  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO what's default here?
+  const imgRef = useRef<HTMLImageElement>(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
+  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO when doing content - what's default here?
 
   const handleChangeActiveProject = (projectKey: string) => {
     setProjectsState(projects[projectKey])

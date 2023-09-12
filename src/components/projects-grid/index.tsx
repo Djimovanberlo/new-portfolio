@@ -2,18 +2,17 @@ import { useId, useRef } from 'react'
 
 import projects from 'lib/copy/projects'
 import getFlipProperties from 'lib/flip'
+import { P } from 'components/typography'
 
-//TODO TSX
-//TODO clean!
 const Cell = ({
   id,
   title,
-  img,
+  imgSrc,
   imgRef,
   projectsRef,
   handleChangeActiveProject,
 }) => {
-  const cellRef = useRef(null)
+  const cellRef = useRef<HTMLImageElement>(null)
 
   const handleClick = () => {
     handleChangeActiveProject(id)
@@ -28,7 +27,7 @@ const Cell = ({
 
     imgRef.current.setAttribute('data-image', title)
 
-    const prevRect = cellRef.current.getBoundingClientRect()
+    const prevRect = cellRef?.current?.getBoundingClientRect()!
     const finalRect = imgRef.current.getBoundingClientRect()
 
     const { transforms, options } = getFlipProperties({ prevRect, finalRect })
@@ -37,14 +36,18 @@ const Cell = ({
   }
 
   return (
-    <img
-      ref={cellRef}
-      className='projectsGrid__cell'
-      alt={title}
-      data-key={title}
-      onClick={handleClick}
-      src={img}
-    />
+    <div className='projectsGrid__cell'>
+      <img
+        ref={cellRef}
+        alt={title}
+        data-key={title}
+        onClick={handleClick}
+        src={imgSrc}
+      />
+      <span onClick={handleClick}>
+        <P>{title}</P>
+      </span>
+    </div>
   )
 }
 
@@ -53,17 +56,16 @@ const ProjectsGrid = ({ imgRef, projectsRef, handleChangeActiveProject }) => {
 
   return (
     <div className='projectsGrid'>
-      {Object.entries(projects).map(([key, { title, img }]) => (
+      {Object.entries(projects).map(([key, { title, imgSrc }]) => (
         <Cell
           key={id + key}
           id={key}
-          img={img}
+          imgSrc={imgSrc}
           title={title}
           imgRef={imgRef}
           projectsRef={projectsRef}
-          handleChangeActiveProject={handleChangeActiveProject}>
-          {title}
-        </Cell>
+          handleChangeActiveProject={handleChangeActiveProject}
+        />
       ))}
     </div>
   )

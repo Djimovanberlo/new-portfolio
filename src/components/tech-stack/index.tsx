@@ -1,6 +1,11 @@
 import { useId } from 'react'
 import { FaGithub } from 'react-icons/fa'
-import { SiContentful } from 'react-icons/si'
+import {
+  SiContentful,
+  SiNextdotjs,
+  SiStyledcomponents,
+  SiTailwindcss,
+} from 'react-icons/si'
 import {
   BiLinkExternal,
   BiLogoReact,
@@ -10,9 +15,21 @@ import {
   BiLogoSass,
 } from 'react-icons/bi'
 
+export enum StackNames {
+  React = 'react',
+  TypeScript = 'typeScript',
+  NextJs = 'nextJs',
+  GraphQL = 'graphQL',
+  CSS = 'css',
+  Sass = 'sass',
+  StyledComponents = 'styledComponents',
+  Tailwind = 'tailwind',
+  Contentful = 'contentFul',
+}
+
 interface Props {
   className?: string
-  techStack: string[]
+  techStack: StackNames[]
   githubLink: string
   projectLink: string
 }
@@ -20,13 +37,16 @@ interface Props {
 const stackIcons = {
   react: <BiLogoReact />,
   typeScript: <BiLogoTypescript />,
+  nextJs: <SiNextdotjs />,
   graphQL: <BiLogoGraphql />,
   css: <BiLogoCss3 />,
   sass: <BiLogoSass />,
+  styledComponents: <SiStyledcomponents />,
+  tailwind: <SiTailwindcss />,
   contentFul: <SiContentful />,
 }
 
-const Stack = ({ techStack }: Pick<Props, 'techStack'>) => {
+export const Stack = ({ techStack }: Pick<Props, 'techStack'>) => {
   const id = useId()
 
   return (

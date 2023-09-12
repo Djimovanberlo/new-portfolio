@@ -6,18 +6,24 @@
   margin-inline: auto;
 
   &__cell {
-    all: unset;
-    width: 5rem;
-    aspect-ratio: 1 / 1;
+    position: relative;
     display: grid;
     place-items: center;
-    text-align: center;
-    font-family: 'WorkSans-Regular', sans-serif;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    & > img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 6rem;
+      aspect-ratio: 1 / 1;
+    }
+
+    & > span {
+      text-align: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
 
     &:hover {
       cursor: pointer;

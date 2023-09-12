@@ -1,6 +1,6 @@
-import { Label } from 'components/typography'
-import { Field } from 'formik'
 import { ChangeEvent } from 'react'
+
+import { Label } from 'components/typography'
 
 interface Props {
   className?: string

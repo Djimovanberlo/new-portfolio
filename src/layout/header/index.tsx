@@ -4,8 +4,8 @@ import { useScrollspy } from 'lib/hooks/useScrollSpy'
 import { useRef } from 'react'
 
 const Header = () => {
-  const headerRef = useRef<any>(null)
-  const headerHeight = headerRef.current?.clientHeight
+  const headerRef = useRef<HTMLHeadElement>(null)
+  const headerHeight = headerRef.current?.clientHeight ?? 0
   const sectionIds = Object.values(SectionNames)
   const activeId = useScrollspy({ ids: sectionIds, offset: headerHeight })
 

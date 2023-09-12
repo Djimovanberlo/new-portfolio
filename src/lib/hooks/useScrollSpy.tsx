@@ -1,11 +1,17 @@
-import { SectionNames } from 'interfaces/layout'
 import { useEffect, useState } from 'react'
 
 const clamp = (value: number) => Math.max(0, value)
 
-const isBetween = (value: number, floor: number, ceil: number) => value >= floor && value <= ceil
+const isBetween = (value: number, floor: number, ceil: number) =>
+  value >= floor && value <= ceil
 
-export const useScrollspy = ({ ids, offset = 0 }: { ids: SectionNames[]; offset: number }) => {
+export const useScrollspy = ({
+  ids,
+  offset = 0,
+}: {
+  ids: string[]
+  offset: number
+}) => {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
@@ -26,7 +32,7 @@ export const useScrollspy = ({ ids, offset = 0 }: { ids: SectionNames[]; offset:
         })
         .find(({ top, bottom }) => isBetween(scroll, top, bottom))
 
-      setActiveId(position?.id || '')
+      setActiveId(position?.id ?? '')
     }
 
     listener()

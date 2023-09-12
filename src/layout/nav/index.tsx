@@ -1,38 +1,29 @@
-import Button from 'components/button'
 import ButtonCollection from 'components/button-collection'
 import { SectionNames } from 'interfaces/layout'
-import useButtonCollection from 'lib/hooks/useButtonCollection'
 
 const Nav = ({ activeId }) => {
-  const buttonsClass = 'navButton'
-  const { buttonCollectionRef, backgroundPos, handleUpdateButtonPos } = useButtonCollection({ buttonsClass })
-
   const handleClick = evt => {
     evt.preventDefault()
-    const rect = evt.target.getBoundingClientRect()
-    handleUpdateButtonPos(rect)
 
-    const element = document.getElementById(evt.target.name)
+    const element = document.getElementById(evt.target.name.toLowerCase())
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const buttons = Object.values(SectionNames).map((title, index) => {
-    const isActive = activeId === title
-
-    return index === 0 ? (
-      <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
-        Djimo
-      </Button>
-    ) : (
-      <Button key={index} className={buttonsClass} name={title} handleClick={handleClick} isActive={isActive}>
-        {title}
-      </Button>
-    )
-  })
+  const buttons = Object.keys(SectionNames).map((sectionName, index) => ({
+    buttonName: sectionName,
+    text: index === 0 ? 'Djimo' : sectionName,
+  }))
+  const activeIndex = buttons
+    .map(({ buttonName }) => buttonName)
+    .findIndex(buttonName => buttonName.toLocaleLowerCase() === activeId)
 
   return (
-    <nav ref={buttonCollectionRef} className='nav'>
-      <ButtonCollection buttons={buttons} backgroundPos={backgroundPos} ref={buttonCollectionRef} />
+    <nav className='nav'>
+      <ButtonCollection
+        activeIndex={activeIndex}
+        buttons={buttons}
+        handleClick={handleClick}
+      />
     </nav>
   )
 }
