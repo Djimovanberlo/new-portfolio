@@ -1,9 +1,9 @@
 import { timeLine } from 'lib/copy/about'
 import { H2, P } from 'components/typography'
 
-const TimelineIcon = ({ tooltipChildren, icon }) => (
+const TimelineIcon = ({ tooltipText, icon }) => (
   <div className='timelineIcon'>
-    <P className='tooltip'>{tooltipChildren}</P>
+    <P className='tooltip'>{tooltipText}</P>
     <img src={icon} alt='timeline img' />
   </div>
 )
@@ -11,7 +11,7 @@ const TimelineIcon = ({ tooltipChildren, icon }) => (
 const Timeline = () => {
   const data = timeLine.flatMap(({ icon, tooltipText }, index) => {
     const element = (
-      <TimelineIcon key={index} tooltipChildren={tooltipText} icon={icon} />
+      <TimelineIcon key={index} tooltipText={tooltipText} icon={icon} />
     )
     const separator = <div key={`hr-${index}`} className='timeline__line' />
     return [element, separator]
