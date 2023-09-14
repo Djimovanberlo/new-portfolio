@@ -18,7 +18,7 @@ const sisoe = {
 
 const taalkundig = {
   title: 'Taalkundig',
-  text: 'Taalkundig is a blog website I built for my brother. It as a homepage - which hold a blog post overview; a blogpost detail page and a short about page. The website is build with React, Sass, GraphQL and Contentful. The code is done, but the content is not filled in yet.',
+  text: 'Taalkundig is a blog website I built for my brother. It has a homepage - which holds a blog post overview, a blog post detail page and a short about page. The website is built with React, Sass, GraphQL and Contentful. Although the code is ready, the content hasnot been added yet.',
   imgSrc: taalkundigImg,
   githubLink: 'https://github.com/Djimovanberlo/taalkundig',
   projectLink: 'https://taalkundig.vercel.app/',
@@ -27,7 +27,7 @@ const taalkundig = {
 
 const talentCalculator = {
   title: 'Talent Calculator',
-  text: "I started this project to learn TypeScript. It is a redo of Classic World of Warcraft's talent calculator, but with some of my own dream talents and content added in. The code is super messy, as I was just starting out. It was built with React, TypeScript and vanilla CSS.",
+  text: "I started this project to learn TypeScript. It is a remake of Classic World of Warcraft's talent calculator but with some of my own ideas for talents and content added in. The code is super messy, as I was just starting out. The project was was built with React, TypeScript and vanilla CSS.",
   imgSrc: talentCalcImg,
   githubLink: 'https://github.com/Djimovanberlo/tc-ts',
   projectLink: 'https://djimovanberlo.github.io/tc-ts',
@@ -36,7 +36,7 @@ const talentCalculator = {
 
 const portfolio = {
   title: 'Portfolio',
-  text: "You're looking at it! Had a bunch of fun building this and to be able to design it myself. I can only imagine what kind of portfolio I'll be able to build in a few years' time.",
+  text: "You're looking at it! I had a bunch of fun building this and being able to design it myself. I can only imagine what kind of portfolio I'll be able to build in a few years' time.",
   imgSrc: portfolioImg,
   githubLink: 'https://github.com/Djimovanberlo/new-portfolio',
   projectLink: '',
@@ -45,7 +45,7 @@ const portfolio = {
 
 const weddingSite = {
   title: 'Wedding Site',
-  text: "I built a website for my wedding party. On this website there's some info about the party and a form to RSVP. The website is build with React, Sass and Firebase. It has two themes, some people did not get the humor (which makes it funnier). Password: 'RideauRouge'",
+  text: "I built a website for my wedding party, which includes some info about the party and an RSVP form. The website is built with React, Sass and Firebase. It featurestwo themes, some people did not quite get the humor (which makes it even funnier). Password: 'RideauRouge'",
   imgSrc: weddingImg,
   githubLink: 'https://github.com/Djimovanberlo/trouwuhh',
   projectLink: 'https://djimovanberlo.github.io/trouwuhh',
@@ -54,7 +54,7 @@ const weddingSite = {
 
 const cardGenerator = {
   title: 'Card Generator',
-  text: '⚠ Under construction ⚠. While developing my board game Dino Game, my partner in crime and I want to be able to generate cards to try them out. Currently, we need to handle each individual card inside design software. This is a waste of time. This card generator will allow us to generate cards based on an input form.',
+  text: '⚠ Under construction ⚠. While developing my board game, Dino Game, my partner in crime and I want to be able to generate cards to streamline the process. Currently, we have to handle each card individually within design software, which is time-consuming. This card generator will allow us to generate cards based on user input.',
   imgSrc: cardGeneratorImg,
   githubLink: '',
   projectLink: '',
@@ -63,7 +63,7 @@ const cardGenerator = {
 
 const ancientBasement = {
   title: 'Ancient Basement',
-  text: '⚠ Under construction ⚠. Ancient Basement is a in-browser game that I am working on. Its central gameplay loop is repeated fights in jRPG style (Lufia, Final Fantasy, etc.), combined with a roguelite-style meta game. The game is being build with React, TypeScript and Sass.',
+  text: '⚠ Under construction ⚠. Ancient Basement is an in-browser game that I’m working on. Its central gameplay loop involves repeated fights in jRPG style (Lufia, Final Fantasy, etc.), combined with a roguelite-style meta game. The game is being built with React, TypeScript, Recoil and Sass.',
   imgSrc: ancientBasementImg,
   githubLink: 'https://github.com/Djimovanberlo/ancient-basement',
   projectLink: '',
@@ -72,7 +72,7 @@ const ancientBasement = {
 
 const dinoGame = {
   title: 'Dino Game',
-  text: 'Dino Game a board game that I am working on along with a friend. Players take on the form of Dinosaur heroes and have to cooperate in order to defend their land from evil invading mammal tribes. Dino game combines elements of deck building, tower defense and RPGs.',
+  text: 'Dino Game is a board game that I am developing along with a friend. Players take on the role of a Dinosaur hero and have to cooperate in order to defend their land from evil invading mammal tribes. Dino game combines elements of deck building, tower defense and RPGs.',
   imgSrc: dinogameImg,
   githubLink: '',
   projectLink: '',
