@@ -1,7 +1,7 @@
 {
   "name": "new-portoflio",
   "version": "0.1.0",
-  "homepage": "https://djimovanberlo.github.io/portfolio",
+  "homepage": "https://djimovanberlo.github.io/new-portfolio",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
