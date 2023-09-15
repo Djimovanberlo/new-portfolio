@@ -1,8 +1,9 @@
 .projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: $space-xs;
-  width: fit-content;
+  max-width: 26rem;
+  justify-content: center;
   margin-inline: auto;
 
   &__cell {
@@ -12,7 +13,7 @@
 
     & > img {
       background-repeat: no-repeat;
-      background-size: cover;
+      object-fit: cover;
       width: 6rem;
       aspect-ratio: 1 / 1;
     }
@@ -34,9 +35,5 @@
     &:hover {
       cursor: pointer;
     }
-  }
-
-  @include screen-md {
-    grid-template-columns: repeat(4, 1fr);
   }
 }

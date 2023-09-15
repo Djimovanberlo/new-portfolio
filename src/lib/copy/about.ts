@@ -34,10 +34,14 @@ const personal = {
   img: personalImg,
 }
 
+const stack = Object.values(StackNames).filter(
+  stack => stack !== StackNames.Bootstrap && stack !== StackNames.Sequelize
+)
+
 const professional = {
   title: 'Professional',
   text: "I've been full stack developing since 2020 and have been enjoying it greatly. I especially enjoy the mix frontend development offers: a blend of logic, styling and layout architecture. I consider myself creative and analytical, and I like to think I'm a good communicator. I have experience with many different types of projects, both professionally and personally - from a large HR vacancies site to an app for a smart boxing bag or blogs built with a headless CMS. I love writing clean, reusable code and I'm always looking to improve my skills. Below you can see a bunch of technologies I have experience with.",
-  stack: Object.values(StackNames),
+  stack,
   img: professionalImg,
 }
 

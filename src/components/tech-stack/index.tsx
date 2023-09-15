@@ -5,6 +5,7 @@ import {
   SiNextdotjs,
   SiStyledcomponents,
   SiTailwindcss,
+  SiSequelize,
 } from 'react-icons/si'
 import {
   BiLinkExternal,
@@ -15,6 +16,7 @@ import {
   BiLogoSass,
   BiLogoFirebase,
   BiLogoRedux,
+  BiLogoBootstrap,
 } from 'react-icons/bi'
 
 export enum StackNames {
@@ -29,6 +31,8 @@ export enum StackNames {
   Tailwind = 'tailwind',
   Firebase = 'firebase',
   Contentful = 'contentFul',
+  Sequelize = 'sequelize',
+  Bootstrap = 'bootstrap',
 }
 
 interface Props {
@@ -50,6 +54,8 @@ const stackIcons = {
   tailwind: <SiTailwindcss />,
   firebase: <BiLogoFirebase />,
   contentFul: <SiContentful />,
+  sequelize: <SiSequelize />,
+  bootstrap: <BiLogoBootstrap />,
 }
 
 export const Stack = ({ techStack }: Pick<Props, 'techStack'>) => {

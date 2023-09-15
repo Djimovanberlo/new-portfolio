@@ -6,6 +6,8 @@ import portfolioImg from 'assets/images/portfolio.png'
 import ancientBasementImg from 'assets/images/ancient-basement.png'
 import cardGeneratorImg from 'assets/images/card-generator.png'
 import dinogameImg from 'assets/images/dinogame.png'
+import soaringFlocksImg from 'assets/images/soaring-flocks.png'
+import fakeIdGeneratorImg from 'assets/images/fake-id-generator.png'
 
 const sisoe = {
   title: 'Sisoe',
@@ -79,12 +81,32 @@ const dinoGame = {
   stack: [''],
 }
 
+const soaringFlocks = {
+  title: 'Soaring Flocks',
+  text: 'Soaring flocks was my final project at Codaisseur Academy. In this game, players take on the role of capitalistic birds that compete for the most wealth. Players can generate and trade resources and chat with eachother. The game was built with React, Redux, Sequelize and Bootstrap.',
+  imgSrc: soaringFlocksImg,
+  githubLink: 'https://github.com/Djimovanberlo/soaring-flocks-client',
+  projectLink: 'https://soaring-flocks.netlify.app/gameInfo',
+  stack: ['react', 'sequelize', 'bootstrap'],
+}
+
+const fakeIdGenerator = {
+  title: 'Fake ID generator',
+  text: "Fake ID generator was a group project created during my time at Codaisseur Academy. The app uses a face recognition API to detect the user's face and then allows for some funny customization options. The app was built with React, Redux and vanilla CSS.",
+  imgSrc: fakeIdGeneratorImg,
+  githubLink: 'https://github.com/wmw123/fake-id-generator',
+  projectLink: 'https://relaxed-heisenberg-4577a7.netlify.app/',
+  stack: ['react', 'redux', 'css'],
+}
+
 const projects = {
   portfolio,
   weddingSite,
   sisoe,
   taalkundig,
   talentCalculator,
+  soaringFlocks,
+  fakeIdGenerator,
   ancientBasement,
   cardGenerator,
   dinoGame,
