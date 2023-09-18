@@ -29,7 +29,7 @@ export const aboutTitle = 'About'
 
 const personal = {
   title: 'Personal',
-  text: "Hello friendly friend and welcome to my portfolio website. As you might have guessed, my name is Djimo van Berlo. I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I love to learn new things and broaden my world view. In my free time I like to play with some code, cook up some games and develop some dinner. I like to walk around and explore my surroundings, and perhaps the occasional draping-over-the-couch. I'm married and I've lived in three countries (so far) and speak three languages (Dutch, English, Norwegian (bokmål)) - with some French and German sprinkled in. Have a look around! Or not, it's 100% up to you. Truly.",
+  text: "Hello friendly friend and welcome to my portfolio website. As you might have guessed, my name is Djimo van Berlo. I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I love to learn and discover new things and explore new ideas. I take an investigative approach towards many themes, like history, society, philosophy and of course programming. In my free time I like to play with some code, cook up some games and develop some dinner. I like to walk around and explore my surroundings, and perhaps the occasional draping-over-the-couch. I'm married and I've lived in three countries (so far) and speak three languages (Dutch, English, Norwegian (bokmål)) - with some French and German sprinkled in. Have a look around! Or not, it's 100% up to you. Truly.",
   stack: [],
   img: personalImg,
 }
