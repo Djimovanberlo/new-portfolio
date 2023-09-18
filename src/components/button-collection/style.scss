@@ -1,7 +1,7 @@
 .buttonCollection {
   position: relative;
   display: flex;
-  gap: $space-xs / 2;
+  gap: $space-xxs;
   z-index: 100;
 
   &::after {
