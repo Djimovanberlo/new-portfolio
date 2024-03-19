@@ -9,23 +9,14 @@ const BannerSection = () => {
   const id = useId()
 
   const djimoArr = 'Djimo van Berlo'.split('')
-
-  const uniqueRandomNums: number[] = []
-  while (uniqueRandomNums.length < djimoArr.length) {
-    const randomNum = Math.floor(Math.random() * djimoArr.length)
-    if (!uniqueRandomNums.includes(randomNum)) uniqueRandomNums.push(randomNum)
-  }
+  const uniqueRandomNums = Array.from({ length: djimoArr.length }, () =>
+    Math.floor(Math.random() * djimoArr.length)
+  )
 
   const djimoArrWithRandomNums = djimoArr.map((letter, index) => ({
     letter,
     num: uniqueRandomNums[index],
   }))
-
-  const handleClickScroll = evt => {
-    evt.preventDefault()
-    const element = document.getElementById(SectionNames.About)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <Section name={SectionNames.Banner}>
@@ -41,11 +32,13 @@ const BannerSection = () => {
           Frontend Developer
         </H2>
       </div>
-      <GoArrowDown
-        onClick={handleClickScroll}
-        style={{ '--delay': djimoArr.length } as CSSProperties}
-        className='banner__arrow'
-      />
+      <a href={`#${SectionNames.About}`}>
+        <GoArrowDown
+          // onClick={handleClickScroll}
+          style={{ '--delay': djimoArr.length } as CSSProperties}
+          className='banner__arrow'
+        />
+      </a>
     </Section>
   )
 }

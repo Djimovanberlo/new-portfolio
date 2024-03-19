@@ -9,12 +9,12 @@ interface Props {
 }
 
 const Section = ({ name, children }: Props) => {
-  const { addRef } = useDynamicRefs()
+  const { addSectionRef } = useDynamicRefs()
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    addRef(sectionRef)
-  }, [addRef])
+    addSectionRef(sectionRef)
+  }, [addSectionRef])
 
   return (
     <section id={name} ref={sectionRef} className={`section ${name}`}>

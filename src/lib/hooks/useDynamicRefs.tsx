@@ -13,14 +13,14 @@ import useScrollspy from './useScrollSpy'
 interface DynamicRefsContextType {
   headerRef: RefObject<HTMLElement> | null
   sectionRefs: RefObject<HTMLElement>[]
-  addRef: (ref: RefObject<HTMLElement>) => void
+  addSectionRef: (ref: RefObject<HTMLElement>) => void
   activeId: string
 }
 
 const DynamicRefsContext = createContext<DynamicRefsContextType>({
   headerRef: null,
   sectionRefs: [],
-  addRef: () => {},
+  addSectionRef: () => {},
   activeId: '',
 })
 
@@ -34,13 +34,13 @@ export const DynamicRefsProvider = ({ children }: Props) => {
   const [sectionRefs, setSectionRefs] = useState<RefObject<HTMLElement>[]>([])
   const activeId = useScrollspy({ refs: sectionRefs, offset: headerHeight })
 
-  const addRef = useCallback((ref: RefObject<HTMLElement>) => {
+  const addSectionRef = useCallback((ref: RefObject<HTMLElement>) => {
     setSectionRefs(prevRefs => [...prevRefs, ref])
   }, [])
 
   return (
     <DynamicRefsContext.Provider
-      value={{ headerRef, sectionRefs, addRef, activeId }}>
+      value={{ headerRef, sectionRefs, addSectionRef, activeId }}>
       {children}
     </DynamicRefsContext.Provider>
   )

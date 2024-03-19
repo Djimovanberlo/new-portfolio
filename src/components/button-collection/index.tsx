@@ -37,17 +37,14 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
     }
   }, [activeIndex])
 
+  const style = {
+    '--left': `${backgroundPos.left}px`,
+    '--width': `${backgroundPos.width}px`,
+    '--height': `${backgroundPos.height}px`,
+  } as CSSProperties
+
   return (
-    <div
-      ref={collectionRef}
-      className='buttonCollection'
-      style={
-        {
-          '--left': `${backgroundPos.left}px`,
-          '--width': `${backgroundPos.width}px`,
-          '--height': `${backgroundPos.height}px`,
-        } as CSSProperties
-      }>
+    <div ref={collectionRef} className='buttonCollection' style={style}>
       {buttons.map(({ buttonName, text }, index) => {
         const isActive = activeIndex === index
         return (
