@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { ReactNode, useId } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import {
   SiContentful,
@@ -42,20 +42,22 @@ interface Props {
   projectLink: string
 }
 
-const stackIcons = {
-  react: <BiLogoReact />,
-  typeScript: <BiLogoTypescript />,
-  nextJs: <SiNextdotjs />,
-  redux: <BiLogoRedux />,
-  graphQL: <BiLogoGraphql />,
-  css: <BiLogoCss3 />,
-  sass: <BiLogoSass />,
-  styledComponents: <SiStyledcomponents />,
-  tailwind: <SiTailwindcss />,
-  firebase: <BiLogoFirebase />,
-  contentFul: <SiContentful />,
-  sequelize: <SiSequelize />,
-  bootstrap: <BiLogoBootstrap />,
+const stackIcons: Record<StackNames, ReactNode> = {
+  [StackNames.React]: <BiLogoReact title={StackNames.React} />,
+  [StackNames.TypeScript]: <BiLogoTypescript title={StackNames.TypeScript} />,
+  [StackNames.NextJs]: <SiNextdotjs title={StackNames.NextJs} />,
+  [StackNames.redux]: <BiLogoRedux title={StackNames.redux} />,
+  [StackNames.GraphQL]: <BiLogoGraphql title={StackNames.GraphQL} />,
+  [StackNames.CSS]: <BiLogoCss3 title={StackNames.CSS} />,
+  [StackNames.Sass]: <BiLogoSass title={StackNames.Sass} />,
+  [StackNames.StyledComponents]: (
+    <SiStyledcomponents title={StackNames.StyledComponents} />
+  ),
+  [StackNames.Tailwind]: <SiTailwindcss title={StackNames.Tailwind} />,
+  [StackNames.Firebase]: <BiLogoFirebase title={StackNames.Firebase} />,
+  [StackNames.Contentful]: <SiContentful title={StackNames.Contentful} />,
+  [StackNames.Sequelize]: <SiSequelize title={StackNames.Sequelize} />,
+  [StackNames.Bootstrap]: <BiLogoBootstrap title={StackNames.Bootstrap} />,
 }
 
 export const Stack = ({ techStack }: Pick<Props, 'techStack'>) => {
