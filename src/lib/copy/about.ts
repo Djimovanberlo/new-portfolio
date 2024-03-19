@@ -2,6 +2,7 @@ import utrechtImg from 'assets/images/utrecht.png'
 import tromsoImg from 'assets/images/tromso.png'
 import amsterdamImg from 'assets/images/amsterdam.svg'
 import ollinImg from 'assets/images/olln.png'
+import denHaagImg from 'assets/images/den-haag.png'
 import personalImg from 'assets/images/personal.png'
 import professionalImg from 'assets/images/professional.png'
 import { StackNames } from 'components/tech-stack'
@@ -20,8 +21,12 @@ export const timeLine = [
     icon: amsterdamImg,
   },
   {
-    tooltipText: 'Living in Louvain la Neuve while working remotely',
+    tooltipText: 'Lived in Louvain la Neuve while working remotely',
     icon: ollinImg,
+  },
+  {
+    tooltipText: 'Moved to The Hague in 2024',
+    icon: denHaagImg,
   },
 ]
 

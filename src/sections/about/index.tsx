@@ -16,7 +16,7 @@ const AboutSection = () => {
     setAboutState(about[buttonText])
   }
 
-  const buttons = Object.keys(about).map((buttonName, index) => ({
+  const buttons = Object.keys(about).map(buttonName => ({
     buttonName,
     text: buttonName,
   }))
