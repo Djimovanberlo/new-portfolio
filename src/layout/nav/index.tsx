@@ -1,7 +1,10 @@
 import ButtonCollection from 'components/button-collection'
 import { SectionNames } from 'interfaces/layout'
+import { useDynamicRefs } from 'lib/hooks/useDynamicRefs'
 
-const Nav = ({ activeId }) => {
+const Nav = () => {
+  const { activeId } = useDynamicRefs()
+
   const handleClick = evt => {
     evt.preventDefault()
 
