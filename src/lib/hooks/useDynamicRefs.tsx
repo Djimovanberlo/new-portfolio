@@ -5,14 +5,15 @@ import React, {
   useContext,
   useCallback,
   useRef,
+  RefObject,
 } from 'react'
 
 import useScrollspy from './useScrollSpy'
 
 interface DynamicRefsContextType {
-  headerRef: React.RefObject<HTMLHeadElement> | null
-  sectionRefs: React.RefObject<any>[]
-  addRef: (ref: React.RefObject<any>) => void
+  headerRef: RefObject<HTMLElement> | null
+  sectionRefs: RefObject<HTMLElement>[]
+  addRef: (ref: RefObject<HTMLElement>) => void
   activeId: string
 }
 
@@ -27,13 +28,13 @@ interface Props {
   children: ReactNode
 }
 
-export const DynamicRefsProvider: React.FC<Props> = ({ children }) => {
-  const headerRef = useRef<HTMLHeadElement>(null)
+export const DynamicRefsProvider = ({ children }: Props) => {
+  const headerRef = useRef<HTMLElement>(null)
   const headerHeight = headerRef.current?.clientHeight ?? 0
-  const [sectionRefs, setSectionRefs] = useState<React.RefObject<any>[]>([])
+  const [sectionRefs, setSectionRefs] = useState<RefObject<HTMLElement>[]>([])
   const activeId = useScrollspy({ refs: sectionRefs, offset: headerHeight })
 
-  const addRef = useCallback(ref => {
+  const addRef = useCallback((ref: RefObject<HTMLElement>) => {
     setSectionRefs(prevRefs => [...prevRefs, ref])
   }, [])
 

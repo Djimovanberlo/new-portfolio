@@ -19,7 +19,7 @@ const useScrollspy = ({
       const scroll = window.scrollY
 
       const position = refs
-        .map((ref, index) => {
+        .map(ref => {
           const element = ref.current
 
           if (!element) return { id: '', top: -1, bottom: -1 }
