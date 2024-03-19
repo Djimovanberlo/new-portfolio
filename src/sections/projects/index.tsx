@@ -10,10 +10,10 @@ import ProjectsModal from 'components/projects-modal'
 const ProjectsSection = () => {
   const imgRef = useRef<HTMLImageElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
-  const [projectsState, setProjectsState] = useState(projects['sisoe']) //TODO when doing content - what's default here?
+  const [projectsState, setProjectsState] = useState(projects.portfolio)
 
   const handleChangeActiveProject = (projectKey: string) => {
-    setProjectsState(projects[projectKey])
+    setProjectsState(projects[projectKey] ?? '')
   }
 
   return (

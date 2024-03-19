@@ -13,7 +13,7 @@ const AboutSection = () => {
   const handleClick = evt => {
     evt.preventDefault()
     const buttonText = evt.target.textContent
-    setAboutState(about[buttonText])
+    setAboutState(about[buttonText] ?? '')
   }
 
   const buttons = Object.keys(about).map(buttonName => ({

@@ -5,11 +5,11 @@ const clamp = (value: number) => Math.max(0, value)
 const isBetween = (value: number, floor: number, ceil: number) =>
   value >= floor && value <= ceil
 
-export const useScrollspy = ({
-  ids,
+const useScrollspy = ({
+  refs,
   offset = 0,
 }: {
-  ids: string[]
+  refs: React.RefObject<HTMLElement>[]
   offset: number
 }) => {
   const [activeId, setActiveId] = useState('')
@@ -18,17 +18,17 @@ export const useScrollspy = ({
     const listener = () => {
       const scroll = window.scrollY
 
-      const position = ids
-        .map(id => {
-          const element = document.getElementById(id)
+      const position = refs
+        .map((ref, index) => {
+          const element = ref.current
 
-          if (!element) return { id, top: -1, bottom: -1 }
+          if (!element) return { id: '', top: -1, bottom: -1 }
 
           const rect = element.getBoundingClientRect()
           const top = clamp(rect.top + scroll - offset)
           const bottom = clamp(rect.bottom + scroll - offset)
 
-          return { id, top, bottom }
+          return { id: element?.id, top, bottom }
         })
         .find(({ top, bottom }) => isBetween(scroll, top, bottom))
 
@@ -44,7 +44,60 @@ export const useScrollspy = ({
       window.removeEventListener('resize', listener)
       window.removeEventListener('scroll', listener)
     }
-  }, [ids, offset])
+  }, [refs, offset])
 
   return activeId
 }
+
+export default useScrollspy
+
+// import { useEffect, useState } from 'react'
+
+// const clamp = (value: number) => Math.max(0, value)
+
+// const isBetween = (value: number, floor: number, ceil: number) =>
+//   value >= floor && value <= ceil
+
+// export const useScrollspy = ({
+//   ids,
+//   offset = 0,
+// }: {
+//   ids: string[]
+//   offset: number
+// }) => {
+//   const [activeId, setActiveId] = useState('')
+
+//   useEffect(() => {
+//     const listener = () => {
+//       const scroll = window.scrollY
+
+//       const position = ids
+//         .map(id => {
+//           const element = document.getElementById(id)
+
+//           if (!element) return { id, top: -1, bottom: -1 }
+
+//           const rect = element.getBoundingClientRect()
+//           const top = clamp(rect.top + scroll - offset)
+//           const bottom = clamp(rect.bottom + scroll - offset)
+
+//           return { id, top, bottom }
+//         })
+//         .find(({ top, bottom }) => isBetween(scroll, top, bottom))
+
+//       setActiveId(position?.id ?? '')
+//     }
+
+//     listener()
+
+//     window.addEventListener('resize', listener)
+//     window.addEventListener('scroll', listener)
+
+//     return () => {
+//       window.removeEventListener('resize', listener)
+//       window.removeEventListener('scroll', listener)
+//     }
+//   }, [ids, offset])
+
+//   return activeId
+// }
