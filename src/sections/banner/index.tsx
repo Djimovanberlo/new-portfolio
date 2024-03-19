@@ -18,24 +18,23 @@ const BannerSection = () => {
     num: uniqueRandomNums[index],
   }))
 
+  const delayStyle = (value: number) => ({ '--delay': value } as CSSProperties)
+
   return (
     <Section name={SectionNames.Banner}>
       <div className='banner__container'>
         <H1>
           {djimoArrWithRandomNums.map(({ letter, num }, index) => (
-            <span key={id + index} style={{ '--delay': num } as CSSProperties}>
+            <span key={id + index} style={delayStyle(num)}>
               {letter}
             </span>
           ))}
         </H1>
-        <H2 style={{ '--delay': djimoArr.length } as CSSProperties}>
-          Frontend Developer
-        </H2>
+        <H2 style={delayStyle(djimoArr.length)}>Frontend Developer</H2>
       </div>
       <a href={`#${SectionNames.About}`}>
         <GoArrowDown
-          // onClick={handleClickScroll}
-          style={{ '--delay': djimoArr.length } as CSSProperties}
+          style={delayStyle(djimoArr.length)}
           className='banner__arrow'
         />
       </a>
